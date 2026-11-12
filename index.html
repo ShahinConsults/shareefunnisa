@@ -1,0 +1,2573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="theme-color" content="#09090e" />
+  <meta name="description" content="A magical, ultra-modern luxury birthday celebration for Shareefunnisa." />
+  <title>Happy Birthday Shareefunnisa! 🎂✨</title>
+
+  <!-- Google Fonts: Luxury Serif & Sleek Modern UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================================
+       CSS RESET & LUXURY DESIGN SYSTEM
+    ============================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --bg-dark: #09090e;
+      --bg-surface: rgba(18, 15, 26, 0.75);
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-gold: rgba(255, 215, 0, 0.35);
+      --gold-primary: #ffd700;
+      --gold-light: #fff2cc;
+      --gold-dark: #d4af37;
+      --ruby-velvet: #881337;
+      --ruby-bright: #be123c;
+      --ruby-dark: #4c0519;
+      --text-main: #f8fafc;
+      --text-muted: rgba(248, 250, 252, 0.7);
+      --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--bg-dark);
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Luxury Obsidian Background */
+    .ambient-backdrop {
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 50% 15%, rgba(136, 19, 55, 0.22) 0%, transparent 60%),
+        radial-gradient(circle at 80% 85%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(88, 28, 135, 0.15) 0%, transparent 50%),
+        #09090e;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Starfield Sparkles */
+    .stars-canvas-container {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .ambient-sparkle {
+      position: absolute;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 215, 0, 0.5);
+      animation: sparkleTwinkle infinite ease-in-out alternate;
+    }
+
+    @keyframes sparkleTwinkle {
+      0% { opacity: 0.15; transform: scale(0.6); }
+      100% { opacity: 0.9; transform: scale(1.3); }
+    }
+
+    /* Dedicated HTML5 Confetti & Petals Canvas */
+    #celebration-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    /* =============================================================
+       MAIN APP SHELL
+    ============================================================== */
+    .app-viewport {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: env(safe-area-inset-top, 16px) 16px env(safe-area-inset-bottom, 20px) 16px;
+      z-index: 10;
+      cursor: pointer; /* Whole screen is interactive */
+    }
+
+    /* Top Controls Bar */
+    .top-navbar {
+      width: 100%;
+      max-width: 580px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      z-index: 40;
+    }
+
+    .glass-btn {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      padding: 8px 16px;
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .glass-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 215, 0, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+    }
+
+    .glass-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Step Dots Tracker (Exactly 3 Steps) */
+    .stage-tracker-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(18, 15, 26, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 7px 18px;
+      border-radius: 9999px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .tracker-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tracker-dot.ready {
+      background: rgba(255, 215, 0, 0.45);
+      box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+      animation: dotPulse 2s infinite ease-in-out;
+    }
+
+    .tracker-dot.active {
+      background: var(--gold-primary);
+      transform: scale(1.35);
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+    }
+
+    .tracker-dot.completed {
+      background: linear-gradient(135deg, #ffd700, #f43f5e);
+      box-shadow: 0 0 8px rgba(244, 63, 94, 0.6);
+      transform: scale(1.15);
+    }
+
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
+    }
+
+    /* =============================================================
+       CENTRAL STAGE & HEADING AREA
+    ============================================================== */
+    .stage-center {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+      padding: 10px 0;
+    }
+
+    /* Luxury Header with Golden Foil Finish */
+    .greeting-header {
+      text-align: center;
+      padding-top: 1.2rem;
+      margin-bottom: 2.2rem; /* Generous breathing room so lid & cake never touch text */
+      z-index: 35;
+      pointer-events: none;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      max-width: 480px;
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .greeting-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-shadow: 0 0 16px rgba(255, 215, 0, 0.5);
+    }
+
+    .greeting-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 5.8vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, #ffffff 0%, #fff2cc 30%, #ffd700 70%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 24px rgba(212, 175, 55, 0.35));
+      transition: all 0.4s ease;
+      word-break: break-word;
+    }
+
+    .gold-foil-shimmer {
+      background: linear-gradient(90deg, #ffffff 0%, #fff2cc 20%, #ffd700 45%, #ffffff 55%, #dfa637 75%, #ffffff 100%) !important;
+      background-size: 250% auto !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      animation: goldFoilShimmer 4s ease infinite !important;
+      filter: drop-shadow(0 4px 28px rgba(255, 215, 0, 0.6)) !important;
+      font-size: clamp(2rem, 6.8vw, 3.4rem) !important;
+    }
+
+    @keyframes goldFoilShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* =============================================================
+       INTERACTIVE GIFT STAGE & 3D ARTIFACTS
+    ============================================================== */
+    .stage-interactive-wrapper {
+      position: relative;
+      width: 290px;
+      height: 300px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      touch-action: manipulation;
+      transition: transform 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+    }
+
+    /* On Stage 2 & 3: box & cake base shift gently downward by 25px for maximum headroom */
+    .stage-cake.stage-interactive-wrapper,
+    .stage-interactive-wrapper.stage-cake,
+    .stage-celebration.stage-interactive-wrapper,
+    .stage-interactive-wrapper.stage-celebration {
+      transform: translateY(25px);
+    }
+
+    /* Floating levitation animation */
+    .gentle-levitate {
+      animation: levitateMotion 3.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes levitateMotion {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+
+    /* Light Rays Emanating from Inside Box */
+    .box-radiance {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        rgba(255, 215, 0, 0.5) 0deg,
+        transparent 20deg,
+        rgba(244, 63, 94, 0.4) 45deg,
+        transparent 70deg,
+        rgba(255, 215, 0, 0.5) 90deg,
+        transparent 110deg,
+        rgba(244, 63, 94, 0.4) 135deg,
+        transparent 160deg,
+        rgba(255, 215, 0, 0.5) 180deg,
+        transparent 200deg,
+        rgba(244, 63, 94, 0.4) 225deg,
+        transparent 250deg,
+        rgba(255, 215, 0, 0.5) 270deg,
+        transparent 290deg,
+        rgba(244, 63, 94, 0.4) 315deg,
+        transparent 340deg,
+        rgba(255, 215, 0, 0.5) 360deg
+      );
+      filter: blur(14px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 3;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    }
+
+    .box-radiance.active {
+      transform: translate(-50%, -50%) scale(1.6);
+      opacity: 0.85;
+      animation: rotateRays 18s linear infinite;
+    }
+
+    @keyframes rotateRays {
+      from { transform: translate(-50%, -50%) scale(1.6) rotate(0deg); }
+      to { transform: translate(-50%, -50%) scale(1.6) rotate(360deg); }
+    }
+
+    /* Ground Shadow with Soft Dropoff */
+    .stage-shadow {
+      position: absolute;
+      bottom: -6px;
+      width: 220px;
+      height: 26px;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 72%);
+      border-radius: 50%;
+      filter: blur(8px);
+      z-index: 2;
+    }
+
+    /* -------------------------------------------------------------
+       THE LUXURY GIFT BOX (CRISP RUBY VELVET & TITANIUM GOLD)
+    -------------------------------------------------------------- */
+    .gift-box-base {
+      position: relative;
+      width: 200px;
+      height: 155px;
+      background: linear-gradient(145deg, #a21caf, #881337 40%, #4c0519 100%);
+      border-radius: 0 0 16px 16px;
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      border-top: none;
+      box-shadow: 
+        inset 0 1px 3px rgba(255, 255, 255, 0.25),
+        inset 0 -12px 24px rgba(0, 0, 0, 0.6),
+        0 20px 45px rgba(0, 0, 0, 0.65),
+        0 0 25px rgba(136, 19, 55, 0.3);
+      z-index: 6;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Subtle geometric gold filigree on box base */
+    .gift-box-base::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 14px 14px, rgba(255, 215, 0, 0.12) 1.5px, transparent 0);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    /* Vertical Box Ribbon */
+    .ribbon-vertical {
+      position: absolute;
+      width: 36px;
+      height: 100%;
+      background: linear-gradient(90deg, #996515 0%, #ffd700 45%, #fffbe6 55%, #dfa637 100%);
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.45);
+      z-index: 7;
+    }
+
+    /* Horizontal Box Ribbon */
+    .ribbon-horizontal {
+      position: absolute;
+      top: 48%;
+      width: 100%;
+      height: 32px;
+      background: linear-gradient(180deg, #996515 0%, #ffd700 45%, #fffbe6 55%, #dfa637 100%);
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.45);
+      z-index: 7;
+    }
+
+    /* -------------------------------------------------------------
+       GIFT BOX LID (HINGES DOWN TO THE SIDE - NEVER TOUCHES HEADING!)
+    -------------------------------------------------------------- */
+    .gift-box-lid {
+      position: absolute;
+      bottom: 146px;
+      width: 226px;
+      height: 48px;
+      background: linear-gradient(145deg, #be123c, #881337 50%, #580c1f 100%);
+      border-radius: 12px 12px 6px 6px;
+      border: 1px solid rgba(255, 215, 0, 0.45);
+      box-shadow: 
+        0 10px 24px rgba(0, 0, 0, 0.55),
+        inset 0 2px 4px rgba(255, 255, 255, 0.35);
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      transform-origin: left bottom;
+      transition: transform 0.95s cubic-bezier(0.175, 0.885, 0.32, 1.2), opacity 0.5s ease;
+    }
+
+    .lid-ribbon-v {
+      position: absolute;
+      width: 36px;
+      height: 100%;
+      background: linear-gradient(90deg, #996515 0%, #ffd700 45%, #fffbe6 55%, #dfa637 100%);
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.45);
+    }
+
+    /* Intricate 3D Metallic Bow */
+    .gift-bow {
+      position: absolute;
+      top: -30px;
+      width: 90px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 12;
+    }
+
+    .bow-center-knot {
+      width: 22px;
+      height: 22px;
+      background: radial-gradient(circle at 35% 35%, #fffbe6, #ffd700, #996515);
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      z-index: 14;
+    }
+
+    .bow-wing {
+      position: absolute;
+      width: 44px;
+      height: 26px;
+      background: linear-gradient(135deg, #ffd700 0%, #dfa637 60%, #996515 100%);
+      border-radius: 50% 50% 12% 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .bow-wing.left {
+      left: 6px;
+      transform: rotate(-24deg);
+    }
+
+    .bow-wing.right {
+      right: 6px;
+      transform: rotate(24deg) scaleX(-1);
+    }
+
+    /* CRITICAL VISUAL FIX:
+       In stage-open, stage-cake, stage-celebration, the lid hinges DOWNWARDS
+       and to the side, dropping to the surface beside the box base.
+       It stays 100% CLEAR of the heading above! */
+    .stage-open .gift-box-lid,
+    .stage-cake .gift-box-lid,
+    .stage-celebration .gift-box-lid {
+      transform: translate(-95px, 86px) rotate(-108deg) scale(0.92);
+      opacity: 0.88;
+    }
+
+    /* =============================================================
+       STAGE 2: ELEVATED ARTISAN BIRTHDAY CAKE
+    ============================================================== */
+    .birthday-cake-container {
+      position: absolute;
+      bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 5;
+      transform: translateY(180px) scale(0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 1.1s cubic-bezier(0.175, 0.885, 0.32, 1.2), opacity 0.7s ease;
+    }
+
+    /* Elevated Cake sits comfortably above box base with guaranteed 60px+ negative space to header */
+    .stage-cake .birthday-cake-container,
+    .stage-celebration .birthday-cake-container {
+      transform: translateY(-28px) scale(0.96);
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 8;
+    }
+
+    .cake-assembly {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Three Glowing Candles */
+    .candles-tier {
+      display: flex;
+      gap: 22px;
+      margin-bottom: -4px;
+      z-index: 16;
+    }
+
+    .candle-unit {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .candle-stem {
+      width: 9px;
+      height: 36px;
+      background: repeating-linear-gradient(
+        45deg,
+        #ffffff,
+        #ffffff 5px,
+        #ffd700 5px,
+        #ffd700 10px
+      );
+      border-radius: 4px;
+      box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.9), 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .candle-wick {
+      width: 2px;
+      height: 7px;
+      background: #333333;
+      border-radius: 1px;
+    }
+
+    /* Realistic Shimmering Teardrop Candle Flame */
+    .candle-flame {
+      position: absolute;
+      top: -26px;
+      width: 14px;
+      height: 26px;
+      background: radial-gradient(ellipse at 50% 80%, #ffffff 0%, #fff7a1 30%, #ff8800 70%, transparent 100%);
+      border-radius: 50% 50% 25% 25% / 70% 70% 30% 30%;
+      filter: drop-shadow(0 0 10px rgba(255, 200, 0, 0.95)) drop-shadow(0 0 22px rgba(255, 90, 0, 0.7));
+      animation: flameFlicker 1.1s ease-in-out infinite alternate;
+      transform-origin: 50% 90%;
+      transition: transform 0.25s ease, opacity 0.3s ease;
+    }
+
+    .candle-unit:nth-child(2) .candle-flame {
+      animation-delay: -0.35s;
+    }
+
+    .candle-unit:nth-child(3) .candle-flame {
+      animation-delay: -0.7s;
+    }
+
+    @keyframes flameFlicker {
+      0% { transform: scale(1) rotate(-2deg); }
+      35% { transform: scale(1.08, 0.94) rotate(3deg); }
+      70% { transform: scale(0.96, 1.04) rotate(-3deg); }
+      100% { transform: scale(1.04, 0.97) rotate(2deg); }
+    }
+
+    /* Extinguished Candle State with Animated Smoke */
+    .candle-flame.blown-out {
+      opacity: 0;
+      transform: scale(0) !important;
+    }
+
+    .smoke-puff {
+      position: absolute;
+      top: -30px;
+      width: 12px;
+      height: 12px;
+      background: rgba(230, 230, 230, 0.7);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .smoke-puff.rise {
+      animation: smokeDrift 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes smokeDrift {
+      0% { opacity: 0.85; transform: translateY(0) scale(0.6); filter: blur(1px); }
+      50% { opacity: 0.45; transform: translateY(-26px) scale(1.9) translateX(8px); filter: blur(3px); }
+      100% { opacity: 0; transform: translateY(-52px) scale(3) translateX(-12px); filter: blur(6px); }
+    }
+
+    /* Three-Tier Cake Geometry */
+    .cake-level {
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 
+        0 6px 16px rgba(0, 0, 0, 0.45),
+        inset 0 3px 5px rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Top Tier: Delicate Ivory Rose */
+    .level-top {
+      width: 142px;
+      height: 52px;
+      background: linear-gradient(180deg, #fff0f3 0%, #ffccd5 65%, #ffb3c1 100%);
+      z-index: 12;
+    }
+
+    /* Middle Tier: Rich Crimson & Inscription */
+    .level-middle {
+      width: 184px;
+      height: 60px;
+      background: linear-gradient(180deg, #ffffff 0%, #ffe4e6 50%, #fecdd3 100%);
+      margin-top: -6px;
+      z-index: 11;
+    }
+
+    /* Bottom Tier: Champagne Gold Velvet */
+    .level-bottom {
+      width: 226px;
+      height: 66px;
+      background: linear-gradient(180deg, #fef3c7 0%, #fde68a 60%, #fcd34d 100%);
+      margin-top: -6px;
+      z-index: 10;
+    }
+
+    /* Scalloped Cream Drips */
+    .cream-drips {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 16px;
+      background: #ffffff;
+      border-radius: 0 0 8px 8px;
+      filter: drop-shadow(0 2px 3px rgba(136, 19, 55, 0.2));
+    }
+
+    .cream-drips::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background-image: radial-gradient(circle at 10px 0, #ffffff 8px, transparent 9px);
+      background-size: 20px 16px;
+    }
+
+    /* Gold Pearl Beads */
+    .gold-pearl-border {
+      position: absolute;
+      bottom: 2px;
+      left: 4px;
+      right: 4px;
+      height: 6px;
+      background-image: radial-gradient(circle, #ffd700 2.5px, transparent 3.5px);
+      background-size: 9px 6px;
+      opacity: 0.9;
+    }
+
+    /* Inscription on the middle tier */
+    .cake-gold-text {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #881337;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.5px;
+      z-index: 14;
+      padding-top: 10px;
+    }
+
+    /* Cake Stand Pedestal */
+    .cake-pedestal {
+      width: 254px;
+      height: 14px;
+      background: linear-gradient(90deg, #996515, #ffd700, #fff7a1, #dfa637, #996515);
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+      margin-top: -3px;
+      z-index: 9;
+    }
+
+    /* =============================================================
+       BOTTOM ACTION BAR & GESTURE PROMPT
+    ============================================================== */
+    .bottom-navbar {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      z-index: 40;
+    }
+
+    /* Mobile Gesture Guidance Pill */
+    .gesture-prompt-card {
+      background: rgba(18, 15, 26, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-gold);
+      border-radius: 9999px;
+      padding: 12px 28px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(255, 215, 0, 0.2);
+      animation: pulseAttention 2.4s infinite ease-in-out;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    @keyframes pulseAttention {
+      0% { transform: scale(1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.2); }
+      50% { transform: scale(1.04); box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.45); border-color: var(--gold-primary); }
+      100% { transform: scale(1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.2); }
+    }
+
+    .prompt-icon-badge {
+      font-size: 1.15rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Bouncing Chevron for Swipe Up guidance */
+    .swipe-chevron {
+      display: inline-block;
+      animation: bounceUp 1.4s ease-in-out infinite;
+      font-weight: bold;
+      color: var(--gold-primary);
+    }
+
+    @keyframes bounceUp {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* Subtle Card Toggle Button (Step 3 only, non-blocking) */
+    .card-toggle-btn {
+      padding: 9px 20px;
+      font-size: 0.88rem;
+      border: 1px solid rgba(255, 215, 0, 0.45);
+      background: rgba(18, 15, 26, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: #ffd700;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+      animation: subtleCardGlow 2.5s ease-in-out infinite alternate;
+      cursor: pointer;
+    }
+
+    @keyframes subtleCardGlow {
+      0% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4); transform: translateY(0); }
+      100% { box-shadow: 0 4px 22px rgba(255, 215, 0, 0.35); transform: translateY(-2px); }
+    }
+
+    /* Audio Evolution Status Pill (Top region) */
+    .audio-evolution-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 8px;
+      padding: 5px 14px;
+      background: rgba(18, 15, 26, 0.68);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 12px rgba(255, 215, 0, 0.15);
+      transition: all 0.35s ease;
+      cursor: pointer;
+      user-select: none;
+      z-index: 38;
+    }
+
+    .audio-evolution-badge:hover {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .evo-sparkle {
+      font-size: 0.85rem;
+    }
+
+    .evo-label {
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 400;
+    }
+
+    .evo-name {
+      color: var(--gold-primary);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+    }
+
+    /* =============================================================
+       STAGE 3: ULTRA-CHIC BIRTHDAY CARD MODAL
+    ============================================================== */
+    .luxury-card-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 9, 14, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 60;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .luxury-card-backdrop.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .luxury-card-body {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      background: linear-gradient(165deg, rgba(28, 18, 38, 0.95) 0%, rgba(14, 10, 20, 0.98) 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: 28px;
+      padding: 36px 30px 30px 30px;
+      box-shadow: 
+        0 24px 60px rgba(0, 0, 0, 0.75),
+        0 0 50px rgba(136, 19, 55, 0.35),
+        inset 0 0 25px rgba(255, 215, 0, 0.08);
+      text-align: center;
+      transform: scale(0.9) translateY(24px);
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+      overflow: hidden;
+    }
+
+    .luxury-card-backdrop.visible .luxury-card-body {
+      transform: scale(1) translateY(0);
+    }
+
+    .card-close-x {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s ease;
+    }
+
+    .card-close-x:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: var(--gold-primary);
+    }
+
+    .card-salutation-badge {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      line-height: 1.1;
+      margin-bottom: 4px;
+      text-shadow: 0 0 16px rgba(255, 215, 0, 0.5);
+    }
+
+    .card-name-line {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #ffffff, #fff2cc, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .card-gold-divider {
+      width: 70px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      margin: 0 auto 20px auto;
+    }
+
+    .card-paragraph {
+      font-size: 0.96rem;
+      line-height: 1.68;
+      color: rgba(248, 250, 252, 0.88);
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .card-gold-highlight {
+      color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    .card-signature {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #f472b6;
+      margin-bottom: 26px;
+    }
+
+    .card-btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .card-primary-cta {
+      flex: 1;
+      background: linear-gradient(135deg, #be123c 0%, #881337 100%);
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      border-radius: 9999px;
+      padding: 12px 20px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(190, 18, 60, 0.45);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .card-primary-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(190, 18, 60, 0.65);
+    }
+
+    .card-secondary-cta {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      padding: 12px 20px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .card-secondary-cta:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Toast Notification for Wish / Candle Blow */
+    .celestial-toast {
+      position: fixed;
+      top: 76px;
+      background: rgba(255, 215, 0, 0.95);
+      color: #120f1a;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 215, 0, 0.6);
+      z-index: 100;
+      transform: translateY(-50px) scale(0.9);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+    }
+
+    .celestial-toast.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    /* Responsive adjustments */
+    @media (max-height: 720px) {
+      .greeting-name { font-size: 2.1rem; }
+      .greeting-header { padding-top: 0.8rem; margin-bottom: 2rem; }
+      .stage-interactive-wrapper { transform: scale(0.86); height: 260px; }
+      .stage-cake.stage-interactive-wrapper,
+      .stage-interactive-wrapper.stage-cake,
+      .stage-celebration.stage-interactive-wrapper,
+      .stage-interactive-wrapper.stage-celebration {
+        transform: scale(0.86) translateY(25px);
+      }
+      .app-viewport { padding-top: 8px; padding-bottom: 12px; }
+    }
+
+    @media (max-width: 380px) {
+      .stage-interactive-wrapper { transform: scale(0.85); }
+      .luxury-card-body { padding: 26px 18px 22px 18px; }
+      .card-salutation-badge { font-size: 1.8rem; }
+      .card-paragraph { font-size: 0.88rem; }
+    }
+  
+    /* =============================================================
+       HEAD-CENTERED PHOTO & "FROM THE BOX" BIRTHDAY REVEAL
+    ============================================================== */
+    /* Exactly 4 Steps Tracker */
+    .stage-tracker-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Floating surprise element that rises FROM inside the box */
+    .box-surprise-reveal {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translate(-50%, 60px) scale(0.2);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: transform 1.1s cubic-bezier(0.175, 0.885, 0.32, 1.2), opacity 0.7s ease;
+      white-space: nowrap;
+    }
+
+    /* Step 2: Emerges gracefully FROM inside the open box! */
+    .stage-surprise .box-surprise-reveal {
+      transform: translate(-50%, -85px) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+      animation: surpriseFloat 3.2s ease-in-out infinite alternate;
+    }
+
+    /* Step 3: Docks majestically above the cake while cake rises */
+    .stage-cake .box-surprise-reveal {
+      transform: translate(-50%, -145px) scale(0.8);
+      opacity: 0.98;
+      pointer-events: auto;
+    }
+
+    /* Step 4: Celebration */
+    .stage-celebration .box-surprise-reveal {
+      transform: translate(-50%, -145px) scale(0.84);
+      opacity: 1;
+      pointer-events: auto;
+      animation: surpriseFloat 3.2s ease-in-out infinite alternate;
+    }
+
+    .surprise-crown {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 2px;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.95));
+      animation: crownBob 2.5s ease-in-out infinite alternate;
+    }
+
+    /* Perfectly circular locket ring */
+    .locket-ring {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      border: 3.5px solid #ffd700;
+      box-shadow: 
+        0 0 25px rgba(255, 215, 0, 0.75),
+        0 8px 24px rgba(0, 0, 0, 0.7),
+        inset 0 0 14px rgba(255, 215, 0, 0.4);
+      overflow: hidden;
+      background: #1a0b16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* USER REQUIREMENT: Keep Shareefunnisa photo head in the middle of the circle */
+    .locket-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 32%; /* Exact vertical and horizontal centering of her head */
+      transform: scale(1.1); /* Optimal zoom so her face & headscarf are comfortably framed in the center */
+      display: block;
+    }
+
+    .surprise-hbd-text {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-style: italic;
+      letter-spacing: 2px;
+      color: #fff2cc;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 2px 4px rgba(0,0,0,0.8);
+      margin-top: 6px;
+    }
+
+    .surprise-name-text {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      background: linear-gradient(135deg, #ffffff 0%, #fff2cc 30%, #ffd700 70%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.9)) drop-shadow(0 2px 6px rgba(0,0,0,0.8));
+      margin-top: 2px;
+    }
+
+    .surprise-sparkles {
+      font-size: 0.75rem;
+      letter-spacing: 6px;
+      color: #ffd700;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
+      margin-top: 4px;
+    }
+
+    @keyframes surpriseFloat {
+      0% { transform: translate(-50%, -85px) scale(1); }
+      100% { transform: translate(-50%, -95px) scale(1.02); }
+    }
+
+    .stage-cake .box-surprise-reveal,
+    .stage-celebration .box-surprise-reveal {
+      animation: dockedFloat 3.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes dockedFloat {
+      0% { transform: translate(-50%, -145px) scale(0.82); }
+      100% { transform: translate(-50%, -152px) scale(0.84); }
+    }
+
+    @keyframes crownBob {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-4px) scale(1.06); }
+    }
+
+    /* Modal Photo Styling with Head Centered */
+    .modal-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .modal-photo-ring {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      border: 3.5px solid #ffd700;
+      box-shadow: 0 0 24px rgba(255, 215, 0, 0.6), 0 6px 18px rgba(0,0,0,0.6);
+      overflow: hidden;
+      background: #1a0b16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 32%;
+      transform: scale(1.1);
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Backdrop Glow -->
+  <div class="ambient-backdrop">
+    <div class="stars-canvas-container" id="stars-container"></div>
+  </div>
+
+  <!-- Dedicated HTML5 High-Performance Petals & Confetti Canvas -->
+  <canvas id="celebration-canvas"></canvas>
+
+  <!-- Notification Toast for Wish / Candle Blow -->
+  <div class="celestial-toast" id="wish-toast">✨ Wish Sent to the Stars! ✨</div>
+
+  <!-- Main Viewport Shell -->
+  <div class="app-viewport" id="app-viewport">
+
+    <!-- Top Navigation Controls -->
+    <header class="top-navbar" id="top-navbar">
+      <!-- Replay / Reset Button -->
+      <button class="glass-btn" id="btn-replay" aria-label="Replay Surprise" title="Replay Experience">
+        <span>🔄</span>
+        <span>Replay</span>
+      </button>
+
+      <!-- Stage Tracker Dots (4 Steps) -->
+      <div class="stage-tracker-pill" aria-label="Surprise Steps">
+        <span class="tracker-dot ready" id="dot-1" title="Step 1: Open Box"></span>
+        <span class="tracker-dot" id="dot-2" title="Step 2: Happy Birthday Shareefunnisa from Box"></span>
+        <span class="tracker-dot" id="dot-3" title="Step 3: Reveal Cake"></span>
+        <span class="tracker-dot" id="dot-4" title="Step 4: Flowers Blowing & Celebration"></span>
+      </div>
+
+      <!-- High-Definition Sound Evolution Audio Toggle -->
+      <button class="glass-btn" id="btn-audio" aria-label="Toggle Sound Evolution" title="Toggle Sound Evolution">
+        <span id="audio-icon">👾</span>
+        <span id="audio-label">8-Bit</span>
+      </button>
+    </header>
+
+    <!-- Sleek Audio Status Evolution Indicator -->
+    <div class="audio-evolution-badge" id="audio-evolution-badge" title="Sound Evolution: 8-Bit ➔ Music Box ➔ Celesta ➔ Grand Piano">
+      <span class="evo-sparkle">🎵</span>
+      <span class="evo-label">Sound:</span>
+      <span class="evo-name" id="evo-instrument">8-Bit Chiptune 👾</span>
+    </div>
+
+    <!-- Center Interactive Stage -->
+    <main class="stage-center">
+
+      <!-- Dynamic Header Greeting -->
+      <div class="greeting-header" id="greeting-header">
+        <div class="greeting-subtitle" id="greeting-subtitle">
+          <span>A Special Surprise</span>
+          <span>👑</span>
+        </div>
+        <h1 class="greeting-name" id="main-greeting">A Special Surprise For Shareefunnisa</h1>
+      </div>
+
+      <!-- Interactive Gift Box & Birthday Cake Stage -->
+      <div class="stage-interactive-wrapper gentle-levitate" id="interactive-stage" role="button" tabindex="0" aria-label="Surprise gift box. Tap or swipe up to open.">
+        
+        <!-- Light Rays Radiating from Opened Gift -->
+        <div class="box-radiance" id="box-radiance"></div>
+
+        <!-- Floating Surprise Rises FROM THE BOX (Step 2) -->
+        <div class="box-surprise-reveal" id="box-surprise">
+          <div class="surprise-crown">👑</div>
+          <div class="locket-ring">
+            <img src="data:image/jpeg;base64,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" alt="Shareefunnisa" class="locket-img" />
+          </div>
+          <div class="surprise-hbd-text">Happy Birthday</div>
+          <div class="surprise-name-text">Shareefunnisa</div>
+          <div class="surprise-sparkles">✦ ✨ ✦</div>
+        </div>
+
+        <!-- Multi-Tiered Artisan Birthday Cake (Elevates during Stage 3 & 4) -->
+        <div class="birthday-cake-container" id="birthday-cake">
+          <div class="cake-assembly">
+
+            <!-- 3 Glowing Golden Candles -->
+            <div class="candles-tier" id="candles-tier" title="Tap candles to blow them out!">
+              <!-- Candle 1 -->
+              <div class="candle-unit" data-candle="1">
+                <div class="candle-flame"></div>
+                <div class="smoke-puff"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-stem"></div>
+              </div>
+              <!-- Candle 2 (Center) -->
+              <div class="candle-unit" data-candle="2">
+                <div class="candle-flame"></div>
+                <div class="smoke-puff"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-stem"></div>
+              </div>
+              <!-- Candle 3 -->
+              <div class="candle-unit" data-candle="3">
+                <div class="candle-flame"></div>
+                <div class="smoke-puff"></div>
+                <div class="candle-wick"></div>
+                <div class="candle-stem"></div>
+              </div>
+            </div>
+
+            <!-- Top Cake Level -->
+            <div class="cake-level level-top">
+              <div class="cream-drips"></div>
+              <div class="gold-pearl-border"></div>
+            </div>
+
+            <!-- Middle Cake Level with Inscription -->
+            <div class="cake-level level-middle">
+              <div class="cream-drips"></div>
+              <span class="cake-gold-text">Shareefunnisa</span>
+              <div class="gold-pearl-border"></div>
+            </div>
+
+            <!-- Bottom Cake Level -->
+            <div class="cake-level level-bottom">
+              <div class="cream-drips"></div>
+              <div class="gold-pearl-border"></div>
+            </div>
+
+            <!-- Cake Pedestal Stand -->
+            <div class="cake-pedestal"></div>
+          </div>
+        </div>
+
+        <!-- The Gift Box Lid with Gold Satin Bow (Drops DOWN to side when opened!) -->
+        <div class="gift-box-lid" id="gift-lid">
+          <div class="lid-ribbon-v"></div>
+          <div class="gift-bow">
+            <div class="bow-wing left"></div>
+            <div class="bow-center-knot"></div>
+            <div class="bow-wing right"></div>
+          </div>
+        </div>
+
+        <!-- The Gift Box Base -->
+        <div class="gift-box-base">
+          <div class="ribbon-vertical"></div>
+          <div class="ribbon-horizontal"></div>
+        </div>
+
+        <!-- Soft Radial Ground Shadow -->
+        <div class="stage-shadow"></div>
+      </div>
+
+    </main>
+
+    <!-- Bottom Gesture Guidance & Action Bar -->
+    <footer class="bottom-navbar" id="bottom-navbar">
+      <!-- Main Action Guidance Bar (Tappable anywhere) -->
+      <div class="gesture-prompt-card" id="gesture-prompt">
+        <span class="prompt-icon-badge" id="prompt-icon">🎁</span>
+        <span id="prompt-text">Tap anywhere to open the gift 🎁</span>
+        <span class="swipe-chevron" id="prompt-chevron">↑</span>
+      </div>
+
+      <!-- Subtle Optional Card Toggle in Stage 3 (Never blocks screen automatically) -->
+      <button class="glass-btn card-toggle-btn" id="btn-open-card" style="display: none;" aria-label="Read Birthday Wishes Card">
+        <span>💌</span>
+        <span>Read Birthday Wishes</span>
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- Stage 3: Ultra-Chic Birthday Card Modal -->
+  <div class="luxury-card-backdrop" id="wishes-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="luxury-card-body">
+      <button class="card-close-x" id="btn-close-modal" aria-label="Close Wishes Card">✕</button>
+      
+            <!-- Shareefunnisa Portrait in Modal (Head centered) -->
+      <div class="modal-photo-wrap">
+        <div class="modal-photo-ring">
+          <img src="data:image/jpeg;base64,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" alt="Shareefunnisa" class="modal-photo-img" />
+        </div>
+      </div>
+
+      <div class="card-salutation-badge" id="modal-title">Happy Birthday!</div>
+      <div class="card-name-line">Dearest Shareefunnisa</div>
+      
+      <div class="card-gold-divider"></div>
+      
+      <p class="card-paragraph">
+        Wishing you the happiest and most blessed Birthday!
+        <br /><br />
+        You bring endless warmth, boundless love, and gentle wisdom to our family and everyone around you. May Almighty bless you with <span class="card-gold-highlight">abundant health</span>, long life, peace of mind, and continuous happiness surrounded by your loved ones!
+      </p>
+
+      <div class="card-signature">With immense love, respect & heartfelt prayers ✨💖</div>
+
+      <div class="card-btn-row">
+        <button class="card-primary-cta" id="btn-shower-again">
+          <span>🌸</span>
+          <span>Shower Petals</span>
+        </button>
+        <button class="card-secondary-cta" id="btn-view-cake">
+          <span>🎂 Admire Cake</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================================
+       STANDALONE JAVASCRIPT:
+       - HIGH-DEFINITION CELESTA CHIME AUDIO SYNTHESIZER
+       - GESTURE-DRIVEN STAGE CONTROLLER (SWIPE UP & ANYWHERE TAP)
+       - 60FPS 3D PETAL & CONFETTI CANVAS ENGINE
+  ============================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* -----------------------------------------------------------
+         STATE & CONFIGURATION
+      ------------------------------------------------------------ */
+      const state = {
+        currentStage: 0, // 0: Box, 1: Open Box, 2: HBD Shareefunnisa from Box, 3: Cake, 4: Flowers Blowing
+        candlesBlown: false,
+        audioPlaying: false,
+        audioMuted: false,
+        audioInitialized: false,
+        canvasRunning: false
+      };
+
+      /* DOM Elements */
+      const viewport = document.getElementById('app-viewport');
+      const stageWrapper = document.getElementById('interactive-stage');
+      const gesturePrompt = document.getElementById('gesture-prompt');
+      const promptText = document.getElementById('prompt-text');
+      const promptIcon = document.getElementById('prompt-icon');
+      const promptChevron = document.getElementById('prompt-chevron');
+      const btnAudio = document.getElementById('btn-audio');
+      const audioIcon = document.getElementById('audio-icon');
+      const audioLabel = document.getElementById('audio-label');
+      const audioEvolutionBadge = document.getElementById('audio-evolution-badge');
+      const evoInstrument = document.getElementById('evo-instrument');
+      const btnReplay = document.getElementById('btn-replay');
+      const wishesModal = document.getElementById('wishes-modal');
+      const btnCloseModal = document.getElementById('btn-close-modal');
+      const btnShowerAgain = document.getElementById('btn-shower-again');
+      const btnViewCake = document.getElementById('btn-view-cake');
+      const btnOpenCard = document.getElementById('btn-open-card');
+      const wishToast = document.getElementById('wish-toast');
+      const boxRadiance = document.getElementById('box-radiance');
+      const mainGreeting = document.getElementById('main-greeting');
+      const greetingSubtitle = document.getElementById('greeting-subtitle');
+      const candleUnits = document.querySelectorAll('.candle-unit');
+
+      const trackerDots = [
+        document.getElementById('dot-1'),
+        document.getElementById('dot-2'),
+        document.getElementById('dot-3'),
+        document.getElementById('dot-4')
+      ];
+
+      /* -----------------------------------------------------------
+         AMBIENT STARFIELD GENERATOR
+      ------------------------------------------------------------ */
+      function createAmbientSparkles() {
+        const container = document.getElementById('stars-container');
+        if (!container) return;
+        container.innerHTML = '';
+        const count = 55;
+
+        for (let i = 0; i < count; i++) {
+          const star = document.createElement('div');
+          star.className = 'ambient-sparkle';
+          const size = Math.random() * 2.8 + 1.2;
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.top = `${Math.random() * 100}%`;
+          star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+          star.style.animationDelay = `${Math.random() * 2.5}s`;
+          container.appendChild(star);
+        }
+      }
+
+      /* -----------------------------------------------------------
+         HAPTIC VIBRATION FEEDBACK (MOBILE COMPATIBILITY)
+      ------------------------------------------------------------ */
+      function triggerHaptic(pattern) {
+        if ('vibrate' in navigator) {
+          try {
+            navigator.vibrate(pattern);
+          } catch (e) {
+            // Silently ignore if blocked or unsupported
+          }
+        }
+      }
+
+      /* -----------------------------------------------------------
+         HIGH-DEFINITION CELESTIAL MUSIC BOX / CELESTA SYNTHESIZER
+         Crisp bell harmonics (1.0, 2.76, 5.4), sharp percussive attack,
+         exponential decay, and lush ambient stereo delay simulation.
+      ------------------------------------------------------------ */
+      let audioCtx = null;
+      let masterGain = null;
+      let delayL = null;
+      let delayR = null;
+      let melodyTimeoutId = null;
+
+      function getAudioContext() {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            audioCtx = new AudioContextClass();
+
+            // Master Limiter / Output Gain
+            masterGain = audioCtx.createGain();
+            masterGain.gain.setValueAtTime(0.75, audioCtx.currentTime);
+
+            // Ambient Stereo Delay Network
+            try {
+              delayL = audioCtx.createDelay();
+              delayR = audioCtx.createDelay();
+              delayL.delayTime.setValueAtTime(0.18, audioCtx.currentTime);
+              delayR.delayTime.setValueAtTime(0.26, audioCtx.currentTime);
+
+              const feedback = audioCtx.createGain();
+              feedback.gain.setValueAtTime(0.22, audioCtx.currentTime);
+
+              const delayFilter = audioCtx.createBiquadFilter();
+              delayFilter.type = 'lowpass';
+              delayFilter.frequency.setValueAtTime(3200, audioCtx.currentTime);
+
+              const delayOutput = audioCtx.createGain();
+              delayOutput.gain.setValueAtTime(0.28, audioCtx.currentTime);
+
+              delayL.connect(delayFilter);
+              delayR.connect(delayFilter);
+              delayFilter.connect(feedback);
+              feedback.connect(delayL);
+              feedback.connect(delayR);
+              delayFilter.connect(delayOutput);
+
+              delayOutput.connect(masterGain);
+            } catch (err) {
+              // Graceful fallback without delay
+            }
+
+            masterGain.connect(audioCtx.destination);
+          }
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return audioCtx;
+      }
+
+      // Musical note frequencies (Hz)
+      const NOTES = {
+        C4: 261.63,
+        D4: 293.66,
+        E4: 329.63,
+        F4: 349.23,
+        G4: 392.00,
+        A4: 440.00,
+        Bb4: 466.16,
+        B4: 493.88,
+        C5: 523.25,
+        D5: 587.33,
+        E5: 659.25,
+        F5: 698.46,
+        G5: 783.99,
+        A5: 880.00,
+        C6: 1046.50
+      };
+
+      // Happy Birthday Melody Sheet (Note, duration in beats)
+      const BIRTHDAY_MELODY = [
+        { note: 'C4', beats: 0.75 },
+        { note: 'C4', beats: 0.25 },
+        { note: 'D4', beats: 1.0 },
+        { note: 'C4', beats: 1.0 },
+        { note: 'F4', beats: 1.0 },
+        { note: 'E4', beats: 2.0 },
+
+        { note: 'C4', beats: 0.75 },
+        { note: 'C4', beats: 0.25 },
+        { note: 'D4', beats: 1.0 },
+        { note: 'C4', beats: 1.0 },
+        { note: 'G4', beats: 1.0 },
+        { note: 'F4', beats: 2.0 },
+
+        { note: 'C4', beats: 0.75 },
+        { note: 'C4', beats: 0.25 },
+        { note: 'C5', beats: 1.0 },
+        { note: 'A4', beats: 1.0 },
+        { note: 'F4', beats: 1.0 },
+        { note: 'E4', beats: 1.0 },
+        { note: 'D4', beats: 2.0 },
+
+        { note: 'Bb4', beats: 0.75 },
+        { note: 'Bb4', beats: 0.25 },
+        { note: 'A4', beats: 1.0 },
+        { note: 'F4', beats: 1.0 },
+        { note: 'G4', beats: 1.0 },
+        { note: 'F4', beats: 2.5 }
+      ];
+
+      /* -----------------------------------------------------------
+         CONTINUOUS SOUND EVOLUTION ENGINE
+         Seamless note-to-note transition across 4 evolutionary timbres:
+         Stage 0: 8-Bit Retro Chiptune (Square Wave, snappy arcade feel)
+         Stage 1: Sparkling Music Box (Sine + Bell Chime Harmonics)
+         Stage 2: Warm Celesta / E-Piano (Harmonic Overtones + Chorus)
+         Stage 3: Clean Grand Piano (Acoustic Unison + Soundboard Resonance + Hammer Attack)
+      ------------------------------------------------------------ */
+
+      // 1. STAGE 0: Retro 8-Bit Chiptune
+      function play8BitChiptune(freq, beats, when, ctx) {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'square';
+
+        // Signature chiptune pitch blip
+        osc.frequency.setValueAtTime(freq * 1.025, when);
+        osc.frequency.exponentialRampToValueAtTime(freq, when + 0.015);
+
+        const duration = Math.max((beats * 0.38) * 0.88, 0.16);
+        gain.gain.setValueAtTime(0.0001, when);
+        gain.gain.linearRampToValueAtTime(0.22, when + 0.003);
+        gain.gain.exponentialRampToValueAtTime(0.13, when + 0.05);
+        gain.gain.setValueAtTime(0.13, when + duration - 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.0001, when + duration);
+
+        osc.connect(gain);
+        gain.connect(masterGain);
+
+        osc.start(when);
+        osc.stop(when + duration + 0.04);
+      }
+
+      // 2. STAGE 1: Sparkling Music Box
+      function playMusicBox(freq, beats, when, ctx) {
+        const osc1 = ctx.createOscillator();
+        const osc2 = ctx.createOscillator();
+        const osc3 = ctx.createOscillator();
+        const gain1 = ctx.createGain();
+        const gain2 = ctx.createGain();
+        const gain3 = ctx.createGain();
+
+        // Fundamental pure crystal sine
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(freq, when);
+
+        // Bell overtone octave (2.0x)
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(freq * 2.0, when);
+
+        // High comb chime ping (4.0x)
+        osc3.type = 'sine';
+        osc3.frequency.setValueAtTime(freq * 4.0, when);
+
+        const duration = Math.max((beats * 0.38) * 1.5, 0.65);
+
+        gain1.gain.setValueAtTime(0.0001, when);
+        gain1.gain.linearRampToValueAtTime(0.30, when + 0.002);
+        gain1.gain.exponentialRampToValueAtTime(0.0001, when + duration);
+
+        gain2.gain.setValueAtTime(0.0001, when);
+        gain2.gain.linearRampToValueAtTime(0.12, when + 0.002);
+        gain2.gain.exponentialRampToValueAtTime(0.0001, when + duration * 0.6);
+
+        gain3.gain.setValueAtTime(0.0001, when);
+        gain3.gain.linearRampToValueAtTime(0.05, when + 0.002);
+        gain3.gain.exponentialRampToValueAtTime(0.0001, when + duration * 0.25);
+
+        osc1.connect(gain1);
+        osc2.connect(gain2);
+        osc3.connect(gain3);
+
+        gain1.connect(masterGain);
+        gain2.connect(masterGain);
+        gain3.connect(masterGain);
+
+        if (delayL && delayR) {
+          gain1.connect(delayL);
+          gain2.connect(delayR);
+        }
+
+        osc1.start(when);
+        osc2.start(when);
+        osc3.start(when);
+
+        osc1.stop(when + duration + 0.05);
+        osc2.stop(when + duration + 0.05);
+        osc3.stop(when + duration + 0.05);
+      }
+
+      // 3. STAGE 2: Warm Celesta / E-Piano
+      function playWarmCelesta(freq, beats, when, ctx) {
+        const osc1 = ctx.createOscillator();
+        const osc2 = ctx.createOscillator();
+        const osc3 = ctx.createOscillator();
+        const osc4 = ctx.createOscillator();
+        const gain1 = ctx.createGain();
+        const gain2 = ctx.createGain();
+        const gain3 = ctx.createGain();
+        const gain4 = ctx.createGain();
+
+        // 1. Fundamental
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(freq, when);
+
+        // 2. Bell Inharmonic Overtone (2.756x)
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(freq * 2.756, when);
+
+        // 3. Shimmering High Sparkle (5.404x)
+        osc3.type = 'sine';
+        osc3.frequency.setValueAtTime(freq * 5.404, when);
+
+        // 4. Sub-harmonic Warmth (0.5x triangle)
+        osc4.type = 'triangle';
+        osc4.frequency.setValueAtTime(freq * 0.5, when);
+
+        const duration = Math.max((beats * 0.38) * 1.6, 0.85);
+
+        gain1.gain.setValueAtTime(0.0001, when);
+        gain1.gain.linearRampToValueAtTime(0.34, when + 0.003);
+        gain1.gain.exponentialRampToValueAtTime(0.0001, when + duration);
+
+        gain2.gain.setValueAtTime(0.0001, when);
+        gain2.gain.linearRampToValueAtTime(0.10, when + 0.003);
+        gain2.gain.exponentialRampToValueAtTime(0.0001, when + duration * 0.55);
+
+        gain3.gain.setValueAtTime(0.0001, when);
+        gain3.gain.linearRampToValueAtTime(0.04, when + 0.003);
+        gain3.gain.exponentialRampToValueAtTime(0.0001, when + duration * 0.35);
+
+        gain4.gain.setValueAtTime(0.0001, when);
+        gain4.gain.linearRampToValueAtTime(0.07, when + 0.003);
+        gain4.gain.exponentialRampToValueAtTime(0.0001, when + duration * 0.85);
+
+        osc1.connect(gain1);
+        osc2.connect(gain2);
+        osc3.connect(gain3);
+        osc4.connect(gain4);
+
+        gain1.connect(masterGain);
+        gain2.connect(masterGain);
+        gain3.connect(masterGain);
+        gain4.connect(masterGain);
+
+        if (delayL && delayR) {
+          gain1.connect(delayL);
+          gain1.connect(delayR);
+        }
+
+        osc1.start(when);
+        osc2.start(when);
+        osc3.start(when);
+        osc4.start(when);
+
+        osc1.stop(when + duration + 0.05);
+        osc2.stop(when + duration + 0.05);
+        osc3.stop(when + duration + 0.05);
+        osc4.stop(when + duration + 0.05);
+      }
+
+      // 4. STAGE 3: Clean Grand Piano (Simulated Acoustic Concert Grand)
+      function playGrandPiano(freq, beats, when, ctx) {
+        // Grand Piano 3-String Unison Detune (+2.5 cents, -2.5 cents)
+        const oscCenter = ctx.createOscillator();
+        const oscDetuneUp = ctx.createOscillator();
+        const oscDetuneDown = ctx.createOscillator();
+
+        // 2nd and 3rd harmonics for acoustic string presence
+        const osc2nd = ctx.createOscillator();
+        const osc3rd = ctx.createOscillator();
+
+        const stringGain = ctx.createGain();
+        const harmGain = ctx.createGain();
+
+        // Acoustic Soundboard Lowpass Filter
+        const soundboardFilter = ctx.createBiquadFilter();
+        soundboardFilter.type = 'lowpass';
+        soundboardFilter.Q.setValueAtTime(1.4, when);
+        soundboardFilter.frequency.setValueAtTime(4500, when);
+        soundboardFilter.frequency.exponentialRampToValueAtTime(1200, when + 0.18);
+
+        // Fundamental strings
+        oscCenter.type = 'triangle';
+        oscCenter.frequency.setValueAtTime(freq, when);
+
+        oscDetuneUp.type = 'sine';
+        oscDetuneUp.frequency.setValueAtTime(freq * 1.0014, when);
+
+        oscDetuneDown.type = 'sine';
+        oscDetuneDown.frequency.setValueAtTime(freq * 0.9986, when);
+
+        // Overtones
+        osc2nd.type = 'sine';
+        osc2nd.frequency.setValueAtTime(freq * 2.0, when);
+
+        osc3rd.type = 'sine';
+        osc3rd.frequency.setValueAtTime(freq * 3.0, when);
+
+        const duration = Math.max((beats * 0.38) * 2.2, 1.4);
+
+        // Acoustic Piano Envelope: Felt hammer strike, sustain body, smooth ringout
+        stringGain.gain.setValueAtTime(0.0001, when);
+        stringGain.gain.linearRampToValueAtTime(0.38, when + 0.004);
+        stringGain.gain.exponentialRampToValueAtTime(0.24, when + 0.12);
+        stringGain.gain.exponentialRampToValueAtTime(0.0001, when + duration);
+
+        harmGain.gain.setValueAtTime(0.0001, when);
+        harmGain.gain.linearRampToValueAtTime(0.12, when + 0.004);
+        harmGain.gain.exponentialRampToValueAtTime(0.0001, when + duration * 0.5);
+
+        oscCenter.connect(stringGain);
+        oscDetuneUp.connect(stringGain);
+        oscDetuneDown.connect(stringGain);
+
+        osc2nd.connect(harmGain);
+        osc3rd.connect(harmGain);
+
+        stringGain.connect(soundboardFilter);
+        harmGain.connect(soundboardFilter);
+
+        soundboardFilter.connect(masterGain);
+
+        // Connect to ambient delay network for concert hall depth
+        if (delayL && delayR) {
+          soundboardFilter.connect(delayL);
+          soundboardFilter.connect(delayR);
+        }
+
+        // Felt Hammer-Strike Transient
+        try {
+          const noiseBuffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.012), ctx.sampleRate);
+          const noiseData = noiseBuffer.getChannelData(0);
+          for (let i = 0; i < noiseData.length; i++) {
+            noiseData[i] = (Math.random() * 2 - 1) * 0.35;
+          }
+          const noiseSource = ctx.createBufferSource();
+          noiseSource.buffer = noiseBuffer;
+
+          const hammerFilter = ctx.createBiquadFilter();
+          hammerFilter.type = 'bandpass';
+          hammerFilter.frequency.setValueAtTime(2400, when);
+          hammerFilter.Q.setValueAtTime(3.0, when);
+
+          const hammerGain = ctx.createGain();
+          hammerGain.gain.setValueAtTime(0.16, when);
+          hammerGain.gain.exponentialRampToValueAtTime(0.0001, when + 0.012);
+
+          noiseSource.connect(hammerFilter);
+          hammerFilter.connect(hammerGain);
+          hammerGain.connect(masterGain);
+
+          noiseSource.start(when);
+        } catch (e) {
+          // Graceful fallback
+        }
+
+        oscCenter.start(when);
+        oscDetuneUp.start(when);
+        oscDetuneDown.start(when);
+        osc2nd.start(when);
+        osc3rd.start(when);
+
+        oscCenter.stop(when + duration + 0.05);
+        oscDetuneUp.stop(when + duration + 0.05);
+        oscDetuneDown.stop(when + duration + 0.05);
+        osc2nd.stop(when + duration + 0.05);
+        osc3rd.stop(when + duration + 0.05);
+      }
+
+      // Generic Note Player routed to the current stage's instrument
+      function playEvolvedNote(freq, beats, stage, when) {
+        if (state.audioMuted) return;
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const playTime = when || ctx.currentTime;
+
+        if (stage === 0) {
+          play8BitChiptune(freq, beats, playTime, ctx);
+        } else if (stage === 1) {
+          playMusicBox(freq, beats, playTime, ctx);
+        } else if (stage === 2) {
+          playWarmCelesta(freq, beats, playTime, ctx);
+        } else {
+          playGrandPiano(freq, beats, playTime, ctx);
+        }
+      }
+
+      // Dynamic Sound Effects
+      function playBoxOpeningChime() {
+        if (state.audioMuted) return;
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const arpeggio = [NOTES.C5, NOTES.E5, NOTES.G5, NOTES.B4, NOTES.C6];
+        arpeggio.forEach((freq, idx) => {
+          playMusicBox(freq, 0.8, ctx.currentTime + idx * 0.08, ctx);
+        });
+      }
+
+      function playCakeRiseChime() {
+        if (state.audioMuted) return;
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const chords = [
+          [NOTES.F4, NOTES.A4, NOTES.C5],
+          [NOTES.G4, NOTES.Bb4, NOTES.D5],
+          [NOTES.A4, NOTES.C5, NOTES.F5]
+        ];
+        chords.forEach((chord, i) => {
+          chord.forEach(f => playWarmCelesta(f, 1.2, ctx.currentTime + i * 0.18, ctx));
+        });
+      }
+
+      function playCandleBlowSound() {
+        if (state.audioMuted) return;
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        const bufferSize = ctx.sampleRate * 0.4;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+
+        const noise = ctx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(650, ctx.currentTime);
+        filter.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.38);
+
+        const gain = ctx.createGain();
+        gain.gain.setValueAtTime(0.35, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.38);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterGain);
+
+        noise.start();
+
+        // Accompany with soft fading chime
+        playWarmCelesta(NOTES.C5, 0.8, ctx.currentTime + 0.1, ctx);
+      }
+
+      // Continuous Melody Scheduler (Seamless Note-to-Note without interruption)
+      let isSongPlaying = false;
+      let melodyNoteIndex = 0;
+
+      function startContinuousSong() {
+        if (state.audioMuted) return;
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        if (isSongPlaying) return;
+        isSongPlaying = true;
+        updateAudioEvolutionUI();
+        scheduleNextMelodyNote();
+      }
+
+      function scheduleNextMelodyNote() {
+        if (!isSongPlaying || state.audioMuted) {
+          isSongPlaying = false;
+          return;
+        }
+
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        const currentItem = BIRTHDAY_MELODY[melodyNoteIndex];
+        const freq = NOTES[currentItem.note];
+        const tempo = 380; // ms per beat
+        const noteDelayMs = currentItem.beats * tempo;
+
+        // Play note with the current stage's timbre!
+        playEvolvedNote(freq, currentItem.beats, state.currentStage, ctx.currentTime);
+
+        // Advance to next note
+        melodyNoteIndex = (melodyNoteIndex + 1) % BIRTHDAY_MELODY.length;
+
+        // Subtle 0.65s breath before repeating the song
+        const loopPause = (melodyNoteIndex === 0) ? 650 : 0;
+
+        melodyTimeoutId = setTimeout(scheduleNextMelodyNote, noteDelayMs + loopPause);
+      }
+
+      function stopContinuousSong() {
+        if (melodyTimeoutId) {
+          clearTimeout(melodyTimeoutId);
+          melodyTimeoutId = null;
+        }
+        isSongPlaying = false;
+        updateAudioEvolutionUI();
+      }
+
+      // Backwards-compatible aliases
+      function startBirthdaySong() {
+        startContinuousSong();
+      }
+
+      function stopBirthdaySong() {
+        stopContinuousSong();
+      }
+
+      function toggleAudio() {
+        getAudioContext();
+        state.audioMuted = !state.audioMuted;
+
+        if (state.audioMuted) {
+          stopContinuousSong();
+        } else {
+          startContinuousSong();
+        }
+        updateAudioEvolutionUI();
+      }
+
+      function updateAudioEvolutionUI() {
+        const evoMap = [
+          { name: '8-Bit Chiptune', short: '8-Bit', icon: '👾' },
+          { name: 'Crystalline Music Box', short: 'Music Box', icon: '✨' },
+          { name: 'Warm Celesta', short: 'Celesta', icon: '🎶' },
+          { name: 'Clean Grand Piano', short: 'Piano', icon: '🎹' }
+        ];
+        const current = evoMap[state.currentStage] || evoMap[0];
+
+        const evoInstrument = document.getElementById('evo-instrument');
+        if (evoInstrument) {
+          evoInstrument.textContent = `${current.name} ${current.icon}`;
+        }
+
+        if (audioLabel) {
+          audioLabel.textContent = state.audioMuted ? 'Muted' : current.short;
+        }
+        if (audioIcon) {
+          audioIcon.textContent = state.audioMuted ? '🔇' : current.icon;
+        }
+        if (btnAudio) {
+          btnAudio.style.opacity = state.audioMuted ? '0.7' : '1';
+        }
+      }
+
+      /* -----------------------------------------------------------
+         DEDICATED 60FPS CANVAS FLOWER PETALS & SPARKLES ENGINE
+         Simulates 3D fluttering velvet rose petals and gold flakes
+      ------------------------------------------------------------ */
+      const canvas = document.getElementById('celebration-canvas');
+      const ctx = canvas.getContext('2d');
+      let petals = [];
+      let canvasAnimId = null;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class Petal {
+        constructor(isBurst = false, burstOriginX, burstOriginY) {
+          this.reset(isBurst, burstOriginX, burstOriginY);
+        }
+
+        reset(isBurst = false, burstOriginX, burstOriginY) {
+          const types = ['rose', 'sakura', 'gold', 'heart'];
+          this.type = types[Math.floor(Math.random() * types.length)];
+
+          if (this.type === 'rose') {
+            const colors = ['#9f1239', '#be123c', '#881337', '#e11d48'];
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+          } else if (this.type === 'sakura') {
+            const colors = ['#fbcfe8', '#f472b6', '#fce7f3', '#fda4af'];
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+          } else if (this.type === 'gold') {
+            this.color = '#ffd700';
+          } else {
+            this.color = '#fb7185';
+          }
+
+          this.size = Math.random() * 14 + 10;
+          if (this.type === 'gold') this.size = Math.random() * 6 + 3.5;
+
+          if (isBurst && burstOriginX !== undefined) {
+            this.x = burstOriginX;
+            this.y = burstOriginY;
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 10 + 4;
+            this.vx = Math.cos(angle) * speed;
+            this.vy = Math.sin(angle) * speed - 5.5; // Upward burst
+          } else {
+            this.x = Math.random() * canvas.width;
+            this.y = -35 - Math.random() * 60;
+            this.vx = (Math.random() - 0.5) * 1.8;
+            this.vy = Math.random() * 2.2 + 1.2;
+          }
+
+          // 3D rotation rates
+          this.angleX = Math.random() * Math.PI * 2;
+          this.angleY = Math.random() * Math.PI * 2;
+          this.angleZ = Math.random() * Math.PI * 2;
+          this.vAngleX = (Math.random() - 0.5) * 0.04;
+          this.vAngleY = (Math.random() - 0.5) * 0.06;
+          this.vAngleZ = (Math.random() - 0.5) * 0.04;
+
+          this.opacity = Math.random() * 0.35 + 0.65;
+          this.gravity = 0.05;
+          this.windPhase = Math.random() * Math.PI * 2;
+        }
+
+        update(time) {
+          const wind = Math.sin(time * 0.0016 + this.windPhase) * 1.5;
+          this.x += this.vx + wind;
+          this.y += this.vy;
+
+          if (this.vy < 3.2) {
+            this.vy += this.gravity;
+          }
+          this.vx *= 0.985; // Air resistance
+
+          this.angleX += this.vAngleX;
+          this.angleY += this.vAngleY;
+          this.angleZ += this.vAngleZ;
+
+          // Recycle when offscreen (or prune excess bursts smoothly)
+          if (this.y > canvas.height + 40 || this.x < -60 || this.x > canvas.width + 60) {
+            if (petals.length > 180) {
+              this.shouldPrune = true;
+            } else {
+              this.reset(false);
+            }
+          }
+        }
+
+        draw(ctx) {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+
+          // 3D perspective projection scaling
+          const scaleX = Math.cos(this.angleY);
+          const scaleY = Math.cos(this.angleX);
+          ctx.rotate(this.angleZ);
+          ctx.scale(scaleX, scaleY);
+          ctx.globalAlpha = this.opacity;
+
+          if (this.type === 'heart') {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            const topCurveHeight = this.size * 0.3;
+            ctx.moveTo(0, topCurveHeight);
+            ctx.bezierCurveTo(0, 0, -this.size / 2, 0, -this.size / 2, topCurveHeight);
+            ctx.bezierCurveTo(-this.size / 2, (this.size + topCurveHeight) / 2, 0, this.size, 0, this.size * 1.2);
+            ctx.bezierCurveTo(0, this.size, this.size / 2, (this.size + topCurveHeight) / 2, this.size / 2, topCurveHeight);
+            ctx.bezierCurveTo(this.size / 2, 0, 0, 0, 0, topCurveHeight);
+            ctx.fill();
+          } else if (this.type === 'gold') {
+            ctx.fillStyle = this.color;
+            ctx.shadowColor = '#ffd700';
+            ctx.shadowBlur = 8;
+            ctx.beginPath();
+            ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            // Elegant Rose Petal with Curvature
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size);
+            ctx.bezierCurveTo(this.size * 0.8, -this.size * 0.7, this.size * 0.9, this.size * 0.4, 0, this.size);
+            ctx.bezierCurveTo(-this.size * 0.9, this.size * 0.4, -this.size * 0.8, -this.size * 0.7, 0, -this.size);
+            ctx.fill();
+
+            // Subtle specular highlight line
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size * 0.7);
+            ctx.lineTo(0, this.size * 0.6);
+            ctx.stroke();
+          }
+
+          ctx.restore();
+        }
+      }
+
+      function startPetalEngine(burstFromCenter = true) {
+        if (!state.canvasRunning) {
+          state.canvasRunning = true;
+          petals = [];
+        }
+
+        const rect = stageWrapper.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        if (burstFromCenter) {
+          for (let i = 0; i < 90; i++) {
+            petals.push(new Petal(true, centerX, centerY));
+          }
+        }
+
+        const currentCount = petals.length;
+        const targetCount = 160;
+        for (let i = currentCount; i < targetCount; i++) {
+          petals.push(new Petal(false));
+        }
+
+        if (!canvasAnimId) {
+          function animate(time) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = petals.length - 1; i >= 0; i--) {
+              const p = petals[i];
+              p.update(time);
+              if (p.shouldPrune) {
+                petals.splice(i, 1);
+              } else {
+                p.draw(ctx);
+              }
+            }
+            canvasAnimId = requestAnimationFrame(animate);
+          }
+          canvasAnimId = requestAnimationFrame(animate);
+        }
+      }
+
+      function stopPetalEngine() {
+        if (canvasAnimId) {
+          cancelAnimationFrame(canvasAnimId);
+          canvasAnimId = null;
+        }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        petals = [];
+        state.canvasRunning = false;
+      }
+
+      /* -----------------------------------------------------------
+         STAGE TRANSITIONS & GESTURE CONTROLLER
+      ------------------------------------------------------------ */
+      function updateStageUI(stage) {
+        state.currentStage = stage;
+
+        // Exactly 4 Tracker Dots
+        trackerDots.forEach((dot, index) => {
+          if (!dot) return;
+          const stepNum = index + 1; // 1, 2, 3, 4
+          dot.className = 'tracker-dot';
+
+          if (stage === 0) {
+            if (stepNum === 1) dot.classList.add('ready');
+          } else if (stage === 1) {
+            if (stepNum === 1) dot.classList.add('active', 'completed');
+            if (stepNum === 2) dot.classList.add('ready');
+          } else if (stage === 2) {
+            if (stepNum <= 2) dot.classList.add('completed');
+            if (stepNum === 2) dot.classList.add('active');
+            if (stepNum === 3) dot.classList.add('ready');
+          } else if (stage === 3) {
+            if (stepNum <= 3) dot.classList.add('completed');
+            if (stepNum === 3) dot.classList.add('active');
+            if (stepNum === 4) dot.classList.add('ready');
+          } else if (stage === 4) {
+            dot.classList.add('completed', 'active');
+          }
+        });
+
+        // Update Dynamic Sound Evolution Status
+        updateAudioEvolutionUI();
+
+        // 1. INITIAL STATE (Stage 0 - The Closed Gift)
+        if (stage === 0) {
+          stageWrapper.className = 'stage-interactive-wrapper gentle-levitate';
+          boxRadiance.classList.remove('active');
+          mainGreeting.classList.remove('gold-foil-shimmer');
+          mainGreeting.textContent = 'A Special Surprise For Shareefunnisa';
+          if (greetingSubtitle) {
+            greetingSubtitle.innerHTML = '<span>Tap anywhere to begin</span> <span>🎁</span>';
+          }
+          promptIcon.textContent = '🎁';
+          promptText.textContent = 'Tap anywhere to open the gift 🎁';
+          promptChevron.style.display = 'inline-block';
+          if (btnOpenCard) btnOpenCard.style.display = 'none';
+          wishesModal.classList.remove('visible');
+          resetCandles();
+          stopPetalEngine();
+        }
+        // 2. STEP 1 - FIRST TOUCH (Stage 1 - Box Opens)
+        else if (stage === 1) {
+          stageWrapper.className = 'stage-interactive-wrapper stage-open';
+          boxRadiance.classList.add('active');
+          mainGreeting.classList.remove('gold-foil-shimmer');
+          mainGreeting.textContent = 'Something Sweet is Waiting Inside... ✨';
+          if (greetingSubtitle) {
+            greetingSubtitle.innerHTML = '<span>Step 1 of 4 • Box Opened</span> <span>✨</span>';
+          }
+          promptIcon.textContent = '✨';
+          promptText.textContent = 'Tap to see what emerges from the box 🎁';
+          promptChevron.style.display = 'none';
+          if (btnOpenCard) btnOpenCard.style.display = 'none';
+          playBoxOpeningChime();
+          triggerHaptic([50, 70, 50]);
+        }
+        // 3. STEP 2 - SECOND TOUCH (USER REQ: "one more click add Happy Birthday Shareefunnisa from the box")
+        else if (stage === 2) {
+          stageWrapper.className = 'stage-interactive-wrapper stage-open stage-surprise';
+          boxRadiance.classList.add('active');
+          mainGreeting.classList.remove('gold-foil-shimmer');
+          mainGreeting.textContent = 'Happy Birthday Shareefunnisa! 👑';
+          if (greetingSubtitle) {
+            greetingSubtitle.innerHTML = '<span>Step 2 of 4 • Special Surprise</span> <span>💖</span>';
+          }
+          promptIcon.textContent = '🎂';
+          promptText.textContent = 'Tap again to reveal the birthday cake 🎂';
+          promptChevron.style.display = 'none';
+          if (btnOpenCard) btnOpenCard.style.display = 'none';
+          playCakeRiseChime();
+          triggerHaptic([40, 60, 40]);
+        }
+        // 4. STEP 3 - THIRD TOUCH (Stage 3 - Birthday Cake Rises)
+        else if (stage === 3) {
+          stageWrapper.className = 'stage-interactive-wrapper stage-open stage-cake';
+          boxRadiance.classList.add('active');
+          mainGreeting.classList.remove('gold-foil-shimmer');
+          mainGreeting.textContent = 'Make a Birthday Wish, Shareefunnisa... 🕯️';
+          if (greetingSubtitle) {
+            greetingSubtitle.innerHTML = '<span>Step 3 of 4 • Birthday Cake</span> <span>🎂</span>';
+          }
+          promptIcon.textContent = '🌸';
+          promptText.textContent = 'Tap once more to blow the candles & celebrate 🌸';
+          promptChevron.style.display = 'none';
+          if (btnOpenCard) btnOpenCard.style.display = 'none';
+          resetCandles();
+          playCakeRiseChime();
+          triggerHaptic([40, 60, 40]);
+        }
+        // 5. STEP 4 - FOURTH TOUCH (Stage 4 - Candles Blow & Flower Shower)
+        else if (stage === 4) {
+          stageWrapper.className = 'stage-interactive-wrapper stage-open stage-celebration';
+          boxRadiance.classList.add('active');
+          mainGreeting.textContent = 'Happy Birthday Shareefunnisa! 🎉🎂';
+          mainGreeting.classList.add('gold-foil-shimmer');
+          if (greetingSubtitle) {
+            greetingSubtitle.innerHTML = '<span>Grand Celebration</span> <span>👑</span>';
+          }
+          promptIcon.textContent = '🌸';
+          promptText.textContent = 'Tap anywhere for more flowers 🌸';
+          promptChevron.style.display = 'none';
+          if (btnOpenCard) btnOpenCard.style.display = 'inline-flex';
+
+          // Candles blow out with soft smoke puffs
+          blowOutCandles();
+
+          // Flower shower cascades across screen
+          startPetalEngine(true);
+          triggerHaptic([60, 100, 60, 100, 80]);
+        }
+      }
+
+      /* Advance Stage Gracefully */
+      let lastAdvanceTime = 0;
+
+      function advanceStage() {
+        const now = Date.now();
+        if (now - lastAdvanceTime < 260) return; // Prevent double-triggering
+        lastAdvanceTime = now;
+
+        getAudioContext();
+        if (!state.audioMuted && !isSongPlaying) {
+          startContinuousSong();
+        }
+
+        if (state.currentStage === 0) {
+          updateStageUI(1);
+        } else if (state.currentStage === 1) {
+          updateStageUI(2);
+        } else if (state.currentStage === 2) {
+          updateStageUI(3);
+        } else if (state.currentStage === 3) {
+          updateStageUI(4);
+        } else if (state.currentStage === 4) {
+          // Extra flower shower burst on every touch in Stage 4!
+          startPetalEngine(true);
+          triggerHaptic([40, 60]);
+        }
+      }
+
+      /* Reset to Stage 0 */
+      function resetExperience() {
+        triggerHaptic([30, 30]);
+        updateStageUI(0);
+      }
+
+      /* -----------------------------------------------------------
+         CANDLE BLOWING MECHANISM
+      ------------------------------------------------------------ */
+      function blowOutCandles() {
+        if (state.candlesBlown) return;
+        state.candlesBlown = true;
+
+        playCandleBlowSound();
+        triggerHaptic([80, 50, 120]);
+
+        candleUnits.forEach((candle, idx) => {
+          setTimeout(() => {
+            const flame = candle.querySelector('.candle-flame');
+            const smoke = candle.querySelector('.smoke-puff');
+            if (flame) flame.classList.add('blown-out');
+            if (smoke) smoke.classList.add('rise');
+          }, idx * 110);
+        });
+
+        showWishToast('✨ Wish Sent to the Stars! ✨');
+      }
+
+      function resetCandles() {
+        state.candlesBlown = false;
+        candleUnits.forEach((candle) => {
+          const flame = candle.querySelector('.candle-flame');
+          const smoke = candle.querySelector('.smoke-puff');
+          if (flame) flame.classList.remove('blown-out');
+          if (smoke) smoke.classList.remove('rise');
+        });
+      }
+
+      function showWishToast(message) {
+        wishToast.textContent = message;
+        wishToast.classList.add('show');
+        setTimeout(() => {
+          wishToast.classList.remove('show');
+        }, 3400);
+      }
+
+      /* -----------------------------------------------------------
+         HIGH-PERFORMANCE ZERO-LATENCY TOUCH & CLICK CONTROLLER
+         Instantaneous reaction on mobile touch (pointerdown with zero lag)
+      ------------------------------------------------------------ */
+      let lastInteractionTime = 0;
+
+      function handleGlobalInteraction(e) {
+        // Exclude specific top buttons, modal buttons, and card toggle
+        if (e.target.closest('#btn-audio, #btn-replay, #audio-evolution-badge, #btn-close-modal, #btn-shower-again, #btn-view-cake, .luxury-card-body, #btn-open-card')) {
+          return;
+        }
+
+        const now = Date.now();
+        // Debounce to prevent multiple fires within 260ms (avoids accidental double-taps)
+        if (now - lastInteractionTime < 260) {
+          return;
+        }
+        lastInteractionTime = now;
+
+        getAudioContext();
+        if (!state.audioMuted && !isSongPlaying) {
+          startContinuousSong();
+        }
+
+        // Direct candle clicks in Stage 2 blow out candles and advance to Stage 3
+        if (e.target.closest('.candle-unit') && state.currentStage === 3) {
+          updateStageUI(4);
+          return;
+        }
+
+        advanceStage();
+      }
+
+      // Pointerdown gives 0ms latency on both mobile touch and desktop click
+      if (window.PointerEvent) {
+        window.addEventListener('pointerdown', handleGlobalInteraction, { passive: true });
+      } else {
+        window.addEventListener('touchstart', handleGlobalInteraction, { passive: true });
+        window.addEventListener('click', handleGlobalInteraction, { passive: true });
+      }
+
+      // Keyboard Accessibility
+      window.addEventListener('keydown', (e) => {
+        getAudioContext();
+        if (!state.audioMuted && !isSongPlaying) {
+          startContinuousSong();
+        }
+
+        if (e.key === ' ' || e.key === 'Enter') {
+          advanceStage();
+        } else if (e.key === 'Escape') {
+          wishesModal.classList.remove('visible');
+        }
+      });
+
+      // Dedicated Button Listeners
+      btnReplay.addEventListener('click', (e) => {
+        e.stopPropagation();
+        resetExperience();
+      });
+
+      btnAudio.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleAudio();
+      });
+
+      if (audioEvolutionBadge) {
+        audioEvolutionBadge.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleAudio();
+        });
+      }
+
+      // Optional Wishes Card Toggle in Stage 3
+      if (btnOpenCard) {
+        btnOpenCard.addEventListener('click', (e) => {
+          e.stopPropagation();
+          wishesModal.classList.add('visible');
+        });
+      }
+
+      // Modal buttons
+      btnCloseModal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        wishesModal.classList.remove('visible');
+      });
+
+      btnViewCake.addEventListener('click', (e) => {
+        e.stopPropagation();
+        wishesModal.classList.remove('visible');
+      });
+
+      btnShowerAgain.addEventListener('click', (e) => {
+        e.stopPropagation();
+        wishesModal.classList.remove('visible');
+        startPetalEngine(true);
+        triggerHaptic([50, 50, 50]);
+      });
+
+      wishesModal.addEventListener('click', (e) => {
+        if (e.target === wishesModal) {
+          wishesModal.classList.remove('visible');
+        }
+      });
+
+      /* -----------------------------------------------------------
+         INITIALIZATION
+      ------------------------------------------------------------ */
+      createAmbientSparkles();
+      updateStageUI(0);
+
+    })();
+  </script>
+</body>
+</html>
