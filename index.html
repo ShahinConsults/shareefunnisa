@@ -1167,30 +1167,19 @@
       100% { transform: translate(-50%, -52px) scale(1.02); }
     }
 
-    /* Step 3: Docks cleanly ABOVE the cake */
-    .stage-cake .box-surprise-reveal {
-      transform: translate(-50%, -164px) scale(0.82);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Step 4: Celebration */
+    /* Step 2 & 3: In Stage 2 (Cake) and Stage 3 (Celebration), hide photo locket so ONLY the Cake is featured */
+    .stage-cake .box-surprise-reveal,
     .stage-celebration .box-surprise-reveal {
-      transform: translate(-50%, -164px) scale(0.82);
-      opacity: 1;
-      pointer-events: auto;
-      animation: dockedFloat 3.2s ease-in-out infinite alternate;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translate(-50%, 30px) scale(0.4) !important;
+      animation: none !important;
     }
 
-    @keyframes dockedFloat {
-      0% { transform: translate(-50%, -164px) scale(0.82); }
-      100% { transform: translate(-50%, -170px) scale(0.83); }
-    }
-
-    /* Step 3 & 4: Cake positioned cleanly BELOW the docked photo with guaranteed 30px+ clearance */
+    /* Step 2 & 3: Birthday Cake sits beautifully centered at prominent size */
     .stage-cake .birthday-cake-container,
     .stage-celebration .birthday-cake-container {
-      transform: translateY(16px) scale(0.84) !important;
+      transform: translateY(-20px) scale(0.98) !important;
       transform-origin: bottom center !important;
       opacity: 1 !important;
       pointer-events: auto !important;
@@ -1525,10 +1514,10 @@
       <!-- Dynamic Header Greeting -->
       <div class="greeting-header" id="greeting-header">
         <div class="greeting-subtitle" id="greeting-subtitle">
-          <span>A Special Surprise</span>
-          <span>👑</span>
+          <span>Tap to Unwrap Your Gift</span>
+          <span>✨</span>
         </div>
-        <h1 class="greeting-name" id="main-greeting">A Special Surprise For Shareefunnisa</h1>
+        <h1 class="greeting-name" id="main-greeting">Happy Birthday Shareefunnisa! 🎁</h1>
       </div>
 
       <!-- Interactive Gift Box & Birthday Cake Stage -->
@@ -2630,9 +2619,9 @@
           stageWrapper.className = 'stage-interactive-wrapper gentle-levitate';
           boxRadiance.classList.remove('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
-          mainGreeting.textContent = 'A Special Surprise For Shareefunnisa';
+          mainGreeting.textContent = 'Happy Birthday Shareefunnisa! 🎁';
           if (greetingSubtitle) {
-            greetingSubtitle.innerHTML = '<span>Tap anywhere to begin</span> <span>🎁</span>';
+            greetingSubtitle.innerHTML = '<span>Tap to Unwrap Your Gift</span> <span>✨</span>';
           }
           promptIcon.textContent = '🎁';
           promptText.textContent = 'Tap anywhere to open the gift 🎁';
@@ -2649,7 +2638,7 @@
           resetCandles();
           stopPetalEngine();
         }
-        // 2. STEP 1 - FIRST TOUCH (Stage 1 - Box Opens & Mother's Photo Emerges! Box is NOT empty!)
+        // 2. STEP 1 - FIRST TOUCH (Stage 1 - "Surprise For You" -> Mother's Photo Emerges from the Box!)
         else if (stage === 1) {
           document.documentElement.classList.remove('allow-scroll');
           document.body.classList.remove('allow-scroll');
@@ -2658,10 +2647,10 @@
           mainGreeting.classList.remove('gold-foil-shimmer');
           mainGreeting.textContent = 'A Special Surprise For You, Amma! 🌹';
           if (greetingSubtitle) {
-            greetingSubtitle.innerHTML = '<span>Happy Birthday Shareefunnisa!</span> <span>💖</span>';
+            greetingSubtitle.innerHTML = '<span>Step 1 of 3 • Surprise For You</span> <span>💖</span>';
           }
           promptIcon.textContent = '🎂';
-          promptText.textContent = 'Something sweet is waiting for you... Tap for the cake 🎂';
+          promptText.textContent = 'Tap next for something sweet 🎂';
           promptChevron.style.display = 'none';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
           if (motherCard) {
@@ -2671,19 +2660,19 @@
           playBoxOpeningChime();
           triggerHaptic([50, 70, 50]);
         }
-        // 3. STEP 2 - SECOND TOUCH (Stage 2 - The Birthday Cake Rises with Glowing Candles!)
+        // 3. STEP 2 - SECOND TOUCH (Stage 2 - "Something Sweet is Waiting For You" -> ONLY Birthday Cake Appears!)
         else if (stage === 2) {
           document.documentElement.classList.remove('allow-scroll');
           document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-cake';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
-          mainGreeting.textContent = 'Make a Birthday Wish, Shareefunnisa... 🕯️';
+          mainGreeting.textContent = 'Something Sweet is Waiting For You! 🎂';
           if (greetingSubtitle) {
-            greetingSubtitle.innerHTML = '<span>Blow out the candles & celebrate</span> <span>✨</span>';
+            greetingSubtitle.innerHTML = '<span>Step 2 of 3 • Birthday Cake</span> <span>🍰</span>';
           }
-          promptIcon.textContent = '🌸';
-          promptText.textContent = 'Tap the candles to blow them out & make a wish 🌸';
+          promptIcon.textContent = '🕯️';
+          promptText.textContent = 'Tap to Make a Wish & open your birthday card 🕯️';
           promptChevron.style.display = 'none';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
           if (motherCard) {
@@ -2694,16 +2683,16 @@
           playCakeRiseChime();
           triggerHaptic([40, 60, 40]);
         }
-        // 4. STEP 3 - THIRD TOUCH (Stage 3 - Candles Blow Out, Celebration & Keepsake Tribute Card Reveal!)
+        // 4. STEP 3 - THIRD TOUCH (Stage 3 - "Make a Wish" -> Candles Blow Out, Celebration & Keepsake Tribute Card Reveal!)
         else if (stage === 3) {
           document.documentElement.classList.add('allow-scroll');
           document.body.classList.add('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-celebration';
           boxRadiance.classList.add('active');
-          mainGreeting.textContent = 'Happy Birthday Shareefunnisa! 🎉🎂';
+          mainGreeting.textContent = 'Make a Wish — Happy Birthday Amma! 🕯️🎉';
           mainGreeting.classList.add('gold-foil-shimmer');
           if (greetingSubtitle) {
-            greetingSubtitle.innerHTML = '<span>Grand Celebration</span> <span>👑</span>';
+            greetingSubtitle.innerHTML = '<span>Step 3 of 3 • A Daughter’s Love</span> <span>💌</span>';
           }
           promptIcon.textContent = '🌸';
           promptText.textContent = 'Tap anywhere for more flowers 🌸';
