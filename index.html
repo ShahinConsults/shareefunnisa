@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -27,6 +27,8 @@
     }
 
     :root {
+      --stage-scale: 1;
+      --stage-y: 0px;
       --bg-dark: #09090e;
       --bg-surface: rgba(18, 15, 26, 0.75);
       --border-subtle: rgba(255, 255, 255, 0.1);
@@ -46,6 +48,7 @@
     html, body {
       width: 100%;
       height: 100%;
+      height: 100dvh;
       overflow: hidden;
       background-color: var(--bg-dark);
       font-family: var(--font-sans);
@@ -54,6 +57,14 @@
       user-select: none;
       -webkit-user-select: none;
       -webkit-font-smoothing: antialiased;
+    }
+
+    body.allow-scroll {
+      height: auto !important;
+      min-height: 100% !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* Ambient Luxury Obsidian Background */
@@ -107,13 +118,16 @@
       position: relative;
       width: 100%;
       height: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: env(safe-area-inset-top, 16px) 16px env(safe-area-inset-bottom, 20px) 16px;
+      padding: max(12px, env(safe-area-inset-top, 12px)) 14px max(24px, calc(16px + env(safe-area-inset-bottom, 20px))) 14px;
       z-index: 10;
       cursor: pointer; /* Whole screen is interactive */
+      touch-action: manipulation;
     }
 
     /* Top Controls Bar */
@@ -123,8 +137,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 10px;
+      padding-top: 6px;
+      padding-left: 2px;
+      padding-right: 2px;
       z-index: 40;
+      gap: 6px;
     }
 
     .glass-btn {
@@ -133,7 +150,9 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: 9999px;
-      padding: 8px 16px;
+      min-height: 44px;
+      min-width: 44px;
+      padding: 10px 16px;
       color: var(--text-main);
       font-size: 0.84rem;
       font-weight: 500;
@@ -141,9 +160,11 @@
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 7px;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      touch-action: manipulation;
     }
 
     .glass-btn:hover {
@@ -285,6 +306,7 @@
       align-items: flex-end;
       justify-content: center;
       touch-action: manipulation;
+      transform: scale(var(--stage-scale, 1)) translateY(var(--stage-y, 0px));
       transition: transform 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.2);
     }
 
@@ -293,7 +315,8 @@
     .stage-interactive-wrapper.stage-cake,
     .stage-celebration.stage-interactive-wrapper,
     .stage-interactive-wrapper.stage-celebration {
-      transform: translateY(25px);
+      --stage-y: 25px;
+      transform: scale(var(--stage-scale, 1)) translateY(var(--stage-y, 25px));
     }
 
     /* Floating levitation animation */
@@ -302,8 +325,8 @@
     }
 
     @keyframes levitateMotion {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-12px); }
+      0% { transform: scale(var(--stage-scale, 1)) translateY(var(--stage-y, 0px)); }
+      100% { transform: scale(var(--stage-scale, 1)) translateY(calc(var(--stage-y, 0px) - 12px)); }
     }
 
     /* Light Rays Emanating from Inside Box */
@@ -495,7 +518,7 @@
     .stage-open .gift-box-lid,
     .stage-cake .gift-box-lid,
     .stage-celebration .gift-box-lid {
-      transform: translate(-95px, 86px) rotate(-108deg) scale(0.92);
+      transform: translate(-65px, 86px) rotate(-102deg) scale(0.90);
       opacity: 0.88;
     }
 
@@ -741,18 +764,23 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border-gold);
       border-radius: 9999px;
-      padding: 12px 28px;
+      min-height: 48px;
+      padding: 12px 22px;
       color: #ffffff;
-      font-size: 0.95rem;
+      font-size: clamp(0.82rem, 3.8vw, 0.95rem);
       font-weight: 600;
       font-family: var(--font-sans);
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(255, 215, 0, 0.2);
       animation: pulseAttention 2.4s infinite ease-in-out;
       transition: all 0.3s ease;
       cursor: pointer;
+      touch-action: manipulation;
+      max-width: 94vw;
+      text-align: center;
     }
 
     @keyframes pulseAttention {
@@ -1035,40 +1063,59 @@
 
     /* Responsive adjustments */
     @media (max-height: 720px) {
-      .greeting-name { font-size: 2.1rem; }
-      .greeting-header { padding-top: 0.8rem; margin-bottom: 2rem; }
-      .stage-interactive-wrapper { transform: scale(0.86); height: 260px; }
-      .stage-cake.stage-interactive-wrapper,
-      .stage-interactive-wrapper.stage-cake,
-      .stage-celebration.stage-interactive-wrapper,
-      .stage-interactive-wrapper.stage-celebration {
-        transform: scale(0.86) translateY(25px);
+      :root {
+        --stage-scale: 0.86;
       }
-      .app-viewport { padding-top: 8px; padding-bottom: 12px; }
+      .greeting-name { font-size: 2rem; }
+      .greeting-header { padding-top: 0.5rem; margin-bottom: 1.6rem; }
+      .stage-interactive-wrapper { height: 260px; }
+      .app-viewport {
+        padding-top: max(8px, env(safe-area-inset-top, 8px)) !important;
+        padding-bottom: max(16px, calc(10px + env(safe-area-inset-bottom, 16px))) !important;
+      }
     }
 
     @media (max-width: 380px) {
-      .stage-interactive-wrapper { transform: scale(0.85); }
-      .luxury-card-body { padding: 26px 18px 22px 18px; }
-      .card-salutation-badge { font-size: 1.8rem; }
-      .card-paragraph { font-size: 0.88rem; }
+      :root {
+        --stage-scale: 0.82;
+      }
+      .greeting-name { font-size: 1.65rem; }
+      .luxury-card-body { padding: 24px 16px 20px 16px; }
+      .card-salutation-badge { font-size: 1.7rem; }
+      .card-paragraph { font-size: 0.86rem; }
+      .stage-open .gift-box-lid,
+      .stage-cake .gift-box-lid,
+      .stage-celebration .gift-box-lid {
+        transform: translate(-45px, 84px) rotate(-98deg) scale(0.84);
+      }
+    }
+
+    @media (max-width: 340px) {
+      :root {
+        --stage-scale: 0.76;
+      }
+      .top-navbar { gap: 4px; padding-left: 0; padding-right: 0; }
+      .glass-btn { min-width: 38px; min-height: 38px; padding: 6px 9px; font-size: 0.74rem; gap: 4px; }
+      .stage-tracker-pill { padding: 6px 8px; gap: 4px; }
+      .tracker-dot { width: 6px; height: 6px; }
     }
   
     /* =============================================================
        CLEAN LAYOUT, HEAD-CENTERED PHOTO & NON-OVERLAPPING STAGING
     ============================================================== */
-    html, body {
-      width: 100%;
-      min-height: 100%;
-      height: auto !important;
-      overflow-x: hidden !important;
-      overflow-y: auto !important;
-    }
-
     .app-viewport {
       min-height: 100vh !important;
+      min-height: 100dvh !important;
+      height: 100%;
+      height: 100dvh;
+      padding-bottom: max(24px, calc(16px + env(safe-area-inset-bottom, 20px))) !important;
+    }
+
+    body.allow-scroll .app-viewport {
       height: auto !important;
-      padding-bottom: 30px !important;
+      min-height: 100vh !important;
+      min-height: 100dvh !important;
+      padding-bottom: max(34px, calc(20px + env(safe-area-inset-bottom, 24px))) !important;
     }
 
     /* 4-Step Milestone Tracker */
@@ -1737,6 +1784,19 @@
       let delayR = null;
       let melodyTimeoutId = null;
 
+      function primeAudioHardware(ctx) {
+        if (!ctx) return;
+        try {
+          const buffer = ctx.createBuffer(1, 1, 22050);
+          const source = ctx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(ctx.destination);
+          source.start(0);
+        } catch (e) {
+          // Graceful fallback
+        }
+      }
+
       function getAudioContext() {
         if (!audioCtx) {
           const AudioContextClass = window.AudioContext || window.webkitAudioContext;
@@ -1777,6 +1837,7 @@
             }
 
             masterGain.connect(audioCtx.destination);
+            primeAudioHardware(audioCtx);
           }
         }
         if (audioCtx && audioCtx.state === 'suspended') {
@@ -2288,11 +2349,17 @@
       let petals = [];
       let canvasAnimId = null;
 
+      let dpr = 1;
       function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(window.innerWidth * dpr);
+        canvas.height = Math.floor(window.innerHeight * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
       window.addEventListener('resize', resizeCanvas);
+      window.addEventListener('orientationchange', () => {
+        setTimeout(resizeCanvas, 150);
+      });
       resizeCanvas();
 
       class Petal {
@@ -2327,7 +2394,7 @@
             this.vx = Math.cos(angle) * speed;
             this.vy = Math.sin(angle) * speed - 5.5; // Upward burst
           } else {
-            this.x = Math.random() * canvas.width;
+            this.x = Math.random() * window.innerWidth;
             this.y = -35 - Math.random() * 60;
             this.vx = (Math.random() - 0.5) * 1.8;
             this.vy = Math.random() * 2.2 + 1.2;
@@ -2361,7 +2428,7 @@
           this.angleZ += this.vAngleZ;
 
           // Recycle when offscreen (or prune excess bursts smoothly)
-          if (this.y > canvas.height + 40 || this.x < -60 || this.x > canvas.width + 60) {
+          if (this.y > window.innerHeight + 40 || this.x < -60 || this.x > window.innerWidth + 60) {
             if (petals.length > 180) {
               this.shouldPrune = true;
             } else {
@@ -2444,7 +2511,7 @@
 
         if (!canvasAnimId) {
           function animate(time) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
             for (let i = petals.length - 1; i >= 0; i--) {
               const p = petals[i];
               p.update(time);
@@ -2465,7 +2532,7 @@
           cancelAnimationFrame(canvasAnimId);
           canvasAnimId = null;
         }
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
         petals = [];
         state.canvasRunning = false;
       }
@@ -2507,6 +2574,8 @@
 
         // 1. INITIAL STATE (Stage 0 - The Closed Gift)
         if (stage === 0) {
+          document.body.classList.remove('allow-scroll');
+          window.scrollTo(0, 0);
           stageWrapper.className = 'stage-interactive-wrapper gentle-levitate';
           boxRadiance.classList.remove('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2525,6 +2594,7 @@
         }
         // 2. STEP 1 - FIRST TOUCH (Stage 1 - Box Opens)
         else if (stage === 1) {
+          document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2542,6 +2612,7 @@
         }
         // 3. STEP 2 - SECOND TOUCH ("Happy Birthday Shareefunnisa" Photo rises FROM the box!)
         else if (stage === 2) {
+          document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-surprise';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2559,6 +2630,7 @@
         }
         // 4. STEP 3 - THIRD TOUCH (Stage 3 - Birthday Cake Rises)
         else if (stage === 3) {
+          document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-cake';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2577,6 +2649,7 @@
         }
         // 5. STEP 4 - FOURTH TOUCH (Stage 4 - Candles Blow, Grand Celebration & Mother's Tribute Card)
         else if (stage === 4) {
+          document.body.classList.add('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-celebration';
           boxRadiance.classList.add('active');
           mainGreeting.textContent = 'Happy Birthday Shareefunnisa! 🎉🎂';
@@ -2640,6 +2713,7 @@
       /* Reset to Stage 0 */
       function resetExperience() {
         triggerHaptic([30, 30]);
+        document.body.classList.remove('allow-scroll');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         updateStageUI(0);
       }
@@ -2686,44 +2760,117 @@
 
       /* -----------------------------------------------------------
          HIGH-PERFORMANCE ZERO-LATENCY TOUCH & CLICK CONTROLLER
-         Instantaneous reaction on mobile touch (pointerdown with zero lag)
+         Instantaneous reaction on mobile touch without scroll conflicts
       ------------------------------------------------------------ */
       let lastInteractionTime = 0;
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let touchMoved = false;
 
-      function handleGlobalInteraction(e) {
-        // Exclude specific top buttons, modal buttons, and card toggle
-        if (e.target.closest('#btn-audio, #btn-replay, #audio-evolution-badge, #btn-close-modal, #btn-shower-again, #btn-view-cake, .luxury-card-body, #btn-open-card')) {
-          return;
-        }
+      function isInteractiveTarget(target) {
+        if (!target || !target.closest) return false;
+        return !!target.closest(
+          '#btn-audio, #btn-replay, #audio-evolution-badge, #btn-close-modal, #btn-shower-again, #btn-view-cake, .luxury-card-body, #btn-open-card, .mother-blessing-card, .mother-card-inner, .telugu-tribute, .english-section, a, button'
+        );
+      }
 
-        const now = Date.now();
-        // Debounce to prevent multiple fires within 260ms (avoids accidental double-taps)
-        if (now - lastInteractionTime < 260) {
-          return;
-        }
-        lastInteractionTime = now;
+      function handleTouchOrPointerStart(e) {
+        if (isInteractiveTarget(e.target)) return;
 
+        const point = e.touches ? e.touches[0] : e;
+        touchStartX = point.clientX;
+        touchStartY = point.clientY;
+        touchStartTime = Date.now();
+        touchMoved = false;
+
+        // Wake & unlock audio context synchronously on user interaction (iOS requirement)
         getAudioContext();
         if (!state.audioMuted && !isSongPlaying) {
           startContinuousSong();
         }
+      }
 
-        // Direct candle clicks in Stage 2 blow out candles and advance to Stage 3
-        if (e.target.closest('.candle-unit') && state.currentStage === 3) {
+      function handleTouchOrPointerMove(e) {
+        if (!touchStartTime) return;
+        const point = e.touches ? e.touches[0] : e;
+        const dx = point.clientX - touchStartX;
+        const dy = point.clientY - touchStartY;
+        if (Math.hypot(dx, dy) > 12) {
+          touchMoved = true;
+        }
+      }
+
+      function handleTouchOrPointerEnd(e) {
+        if (!touchStartTime) return;
+        const elapsed = Date.now() - touchStartTime;
+        touchStartTime = 0;
+
+        if (isInteractiveTarget(e.target)) return;
+
+        const now = Date.now();
+        if (now - lastInteractionTime < 260) {
+          return;
+        }
+
+        // Direct candle clicks in Stage 3 blow out candles & advance to Stage 4
+        if (!touchMoved && e.target.closest('.candle-unit') && state.currentStage === 3) {
+          lastInteractionTime = now;
           updateStageUI(4);
           return;
         }
 
+        // Swipe-up gesture support in Stage 0
+        if (touchMoved && state.currentStage === 0) {
+          const point = e.changedTouches ? e.changedTouches[0] : e;
+          const dy = point.clientY - touchStartY;
+          if (dy < -35) {
+            lastInteractionTime = now;
+            advanceStage();
+            return;
+          }
+        }
+
+        // If finger moved or held too long, treat as drag/scroll, do NOT advance
+        if (touchMoved || elapsed > 600) {
+          return;
+        }
+
+        lastInteractionTime = now;
         advanceStage();
       }
 
-      // Pointerdown gives 0ms latency on both mobile touch and desktop click
+      // High-performance pointer events with touch fallback
       if (window.PointerEvent) {
-        window.addEventListener('pointerdown', handleGlobalInteraction, { passive: true });
+        window.addEventListener('pointerdown', handleTouchOrPointerStart, { passive: true });
+        window.addEventListener('pointermove', handleTouchOrPointerMove, { passive: true });
+        window.addEventListener('pointerup', handleTouchOrPointerEnd, { passive: true });
+        window.addEventListener('pointercancel', () => { touchStartTime = 0; }, { passive: true });
       } else {
-        window.addEventListener('touchstart', handleGlobalInteraction, { passive: true });
-        window.addEventListener('click', handleGlobalInteraction, { passive: true });
+        window.addEventListener('touchstart', handleTouchOrPointerStart, { passive: true });
+        window.addEventListener('touchmove', handleTouchOrPointerMove, { passive: true });
+        window.addEventListener('touchend', handleTouchOrPointerEnd, { passive: true });
+        window.addEventListener('touchcancel', () => { touchStartTime = 0; }, { passive: true });
+        window.addEventListener('click', (e) => {
+          if (!isInteractiveTarget(e.target)) {
+            advanceStage();
+          }
+        });
       }
+
+      // Resume suspended Web Audio upon tab/app reactivation
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible' && audioCtx) {
+          if (audioCtx.state === 'suspended' && !state.audioMuted) {
+            audioCtx.resume();
+          }
+        }
+      });
+      window.addEventListener('pageshow', () => {
+        if (audioCtx && audioCtx.state === 'suspended' && !state.audioMuted) {
+          audioCtx.resume();
+        }
+      });
 
       // Keyboard Accessibility
       window.addEventListener('keydown', (e) => {
