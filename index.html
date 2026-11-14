@@ -1276,9 +1276,21 @@
       margin-bottom: 4px;
     }
 
+    .heading-en-sub {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-style: italic;
+      font-weight: 600;
+      color: rgba(255, 242, 204, 0.9);
+      display: block;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.35);
+    }
+
     .mother-card-subheading {
       font-family: var(--font-sans);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1.8px;
       color: rgba(255, 242, 204, 0.75);
@@ -1288,11 +1300,57 @@
     .mother-card-divider {
       height: 1px;
       width: 75%;
-      margin: 12px auto 16px auto;
+      margin: 10px auto 14px auto;
       background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.7), transparent);
     }
 
-    .telugu-tribute {
+    /* Bilingual Language Filter Tabs */
+    .card-lang-tabs {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 215, 0, 0.32);
+      border-radius: 999px;
+      padding: 3px;
+      margin: 4px auto 14px auto;
+      gap: 3px;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+      max-width: 100%;
+    }
+
+    .lang-tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 6px 13px;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255, 242, 204, 0.78);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lang-tab-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 215, 0, 0.12);
+    }
+
+    .lang-tab-btn.active {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.28) 0%, rgba(212, 175, 55, 0.2) 100%);
+      color: #ffd700;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 12px rgba(255, 215, 0, 0.35);
+      border-color: rgba(255, 215, 0, 0.65);
+    }
+
+    /* Dedication Verses & Presentation */
+    .telugu-dedication {
       font-family: 'Noto Serif Telugu', serif;
       font-size: 1.05rem;
       line-height: 1.88;
@@ -1302,25 +1360,70 @@
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
     }
 
-    .telugu-salutation {
+    .salutation-block {
+      margin-bottom: 12px;
+    }
+
+    .salutation-te {
+      font-family: 'Noto Serif Telugu', serif;
       font-size: 1.25rem;
       font-weight: 700;
       color: #ffd700;
-      margin-bottom: 10px;
+      margin-bottom: 2px;
       text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+      display: block;
     }
 
-    .telugu-line {
-      margin-bottom: 10px;
+    .salutation-en {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #ffe4e6;
+      display: block;
+      margin-top: 2px;
+      font-weight: 600;
     }
 
-    .telugu-highlight {
+    .verse-couplet {
+      margin-bottom: 13px;
+    }
+
+    .verse-te {
+      font-family: 'Noto Serif Telugu', serif;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #fff8e7;
+      margin-bottom: 3px;
+      display: block;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    }
+
+    .verse-en {
+      font-family: var(--font-display);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: #f3eedf;
+      font-style: italic;
+      opacity: 0.95;
+      padding-left: 2px;
+      display: block;
+    }
+
+    .verse-highlight .verse-te {
       color: #ffffff;
       font-weight: 700;
       background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+    }
+
+    .verse-highlight .verse-en {
+      color: #ffd700;
+      font-weight: 600;
+      font-style: italic;
+      opacity: 1;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.45);
     }
 
     /* Floral Flower Arrangement before name */
@@ -1338,87 +1441,81 @@
       100% { transform: scale(1.05); filter: drop-shadow(0 0 14px rgba(255, 192, 203, 0.95)); }
     }
 
-    .telugu-closing {
+    /* Unified Sign-off */
+    .dedication-closing {
       margin-top: 10px;
       text-align: right;
       padding-right: 6px;
     }
 
-    .telugu-valediction {
+    .valediction-unified {
       font-style: italic;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
       color: #ffd700;
+      display: block;
+      margin-bottom: 4px;
     }
 
-    .telugu-signoff {
-      font-size: 1.15rem;
+    .signoff-unified {
+      font-size: 1.12rem;
       font-weight: 700;
       color: #ffffff;
       margin-top: 4px;
       text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+      display: block;
     }
 
-    /* English Translation Section */
-    .english-section {
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px dashed rgba(255, 215, 0, 0.3);
-      font-family: var(--font-display);
-      font-size: 0.96rem;
-      line-height: 1.68;
-      color: #f1ebd9;
-      text-align: left;
-      padding-left: 8px;
-      padding-right: 8px;
+    /* Language Mode Visibility Rules */
+    /* Telugu Mode */
+    [data-active-lang="telugu"] .lang-en,
+    [data-active-lang="telugu"] .verse-en,
+    [data-active-lang="telugu"] .salutation-en,
+    [data-active-lang="telugu"] .heading-en-sub,
+    [data-active-lang="telugu"] .lang-sep {
+      display: none !important;
     }
 
-    .lang-badge {
-      display: inline-block;
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #ffd700;
-      background: rgba(255, 215, 0, 0.12);
-      border: 1px solid rgba(255, 215, 0, 0.35);
-      border-radius: 12px;
-      padding: 3px 10px;
-      margin-bottom: 10px;
+    /* English Mode */
+    [data-active-lang="english"] .lang-te,
+    [data-active-lang="english"] .verse-te,
+    [data-active-lang="english"] .salutation-te,
+    [data-active-lang="english"] .heading-te,
+    [data-active-lang="english"] .lang-sep {
+      display: none !important;
     }
 
-    .en-salutation {
-      font-size: 1.1rem;
+    [data-active-lang="english"] .heading-en-sub {
+      font-size: 1.22rem;
       font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 8px;
-    }
-
-    .en-line {
-      margin-bottom: 8px;
-    }
-
-    .en-highlight {
       color: #ffd700;
-      font-weight: 600;
+      font-style: normal;
+      margin-top: 0;
     }
 
-    .en-closing {
-      margin-top: 10px;
-      text-align: right;
-      padding-right: 6px;
+    /* Both Mode */
+    [data-active-lang="both"] .lang-te,
+    [data-active-lang="both"] .lang-en,
+    [data-active-lang="both"] .verse-te,
+    [data-active-lang="both"] .verse-en,
+    [data-active-lang="both"] .salutation-te,
+    [data-active-lang="both"] .salutation-en,
+    [data-active-lang="both"] .heading-en-sub,
+    [data-active-lang="both"] .lang-sep {
+      display: block;
     }
 
-    .en-valediction {
-      font-style: italic;
-      font-size: 0.9rem;
-      color: rgba(255, 242, 204, 0.85);
+    [data-active-lang="both"] .lang-sep {
+      display: inline;
     }
 
-    .en-signoff {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-top: 2px;
+    [data-active-lang="both"] .valediction-unified .lang-te,
+    [data-active-lang="both"] .valediction-unified .lang-en {
+      display: inline;
+    }
+
+    [data-active-lang="both"] .signoff-unified .lang-te,
+    [data-active-lang="both"] .signoff-unified .lang-en {
+      display: inline;
     }
 
   </style>
@@ -1568,43 +1665,73 @@
       </div>
 
       <!-- Heartfelt Keepsake Birthday Card from Daughter Shahin Parvez in Telugu & English (Step 4 Finale) -->
-      <div class="mother-blessing-card" id="mother-card" aria-live="polite">
+      <div class="mother-blessing-card" id="mother-card" data-active-lang="both" aria-live="polite">
         <div class="mother-card-inner">
           <div class="mother-card-gold-seal">🌹</div>
-          <h2 class="mother-card-heading">అమ్మా, మీ కూతురి హృదయపూర్వక సందేశం</h2>
-          <div class="mother-card-subheading">A Heartfelt Tribute from Your Daughter, Shahin Parvez</div>
-          <div class="mother-card-divider"></div>
+          <h2 class="mother-card-heading">
+            <span class="heading-te lang-te">అమ్మా, మీ కూతురి హృదయపూర్వక సందేశం</span>
+            <span class="heading-en-sub lang-en">Mother, A Heartfelt Message from Your Daughter</span>
+          </h2>
+          <div class="mother-card-subheading">A Loving Birthday Dedication from Your Daughter, Shahin Parvez</div>
           
-          <!-- Telugu Tribute -->
-          <div class="telugu-tribute">
-            <p class="telugu-salutation">అమ్మా,</p>
-            <p class="telugu-line">నన్ను ఎంతో ప్రేమతో, ఎనలేని త్యాగాలతో ఎంతో గొప్పగా పెంచి పెద్దచేశారు.</p>
-            <p class="telugu-line">నా జీవితంలో మీరు నా తల్లిగా ఉండటం నాకు భగవంతుడు ఇచ్చిన అతిపెద్ద వరం.</p>
-            <p class="telugu-line">మీ అమూల్యమైన ప్రేమ, ఆశీస్సులే నన్ను ఎల్లప్పుడూ ముందుకు నడిపిస్తున్నాయి.</p>
-            <p class="telugu-line telugu-highlight">మిమ్మల్ని నా తల్లిగా పొందడం నా అదృష్టం.. జన్మదిన శుభాకాంక్షలు అమ్మా!</p>
-            
-            <!-- Floral Garland before Daughter's Name -->
-            <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
-            <div class="telugu-closing">
-              <div class="telugu-valediction">ఎల్లప్పుడూ మీ ప్రేమతో,</div>
-              <div class="telugu-signoff">— మీ కూతురు, షాహిన్ పర్వేజ్ 💖</div>
-            </div>
+          <!-- Bilingual Language Filter Tabs -->
+          <div class="card-lang-tabs" role="tablist" aria-label="Language selection">
+            <button type="button" class="lang-tab-btn active" data-lang="both" role="tab" aria-selected="true">
+              <span>✨ Both / ఇరుభాషలు</span>
+            </button>
+            <button type="button" class="lang-tab-btn" data-lang="telugu" role="tab" aria-selected="false">
+              <span>🌹 తెలుగు</span>
+            </button>
+            <button type="button" class="lang-tab-btn" data-lang="english" role="tab" aria-selected="false">
+              <span>💌 English</span>
+            </button>
           </div>
 
-          <!-- English Translation -->
-          <div class="english-section">
-            <div class="lang-badge">English Translation</div>
-            <p class="en-salutation">Dearest Mother Shareefunnisa,</p>
-            <p class="en-line">You raised me with boundless love, endless sacrifices, and profound greatness.</p>
-            <p class="en-line">Having you as my mother is the greatest blessing in my entire life.</p>
-            <p class="en-line">Your selfless love, care, and guiding prayers have shaped who I am today.</p>
-            <p class="en-line en-highlight">I am forever proud and blessed to be your daughter. Happy Birthday, Ammi!</p>
+          <div class="mother-card-divider"></div>
+          
+          <!-- Telugu & English Birthday Dedication -->
+          <div class="telugu-dedication">
+            <!-- Salutation -->
+            <div class="salutation-block">
+              <span class="salutation-te lang-te">అమ్మా,</span>
+              <span class="salutation-en lang-en">Dearest Amma,</span>
+            </div>
+
+            <!-- Line 1 -->
+            <div class="verse-couplet">
+              <span class="verse-te lang-te">నన్ను ఎంతో ప్రేమతో, ఎనలేని త్యాగాలతో ఎంతో గొప్పగా పెంచి పెద్దచేశారు.</span>
+              <span class="verse-en lang-en">You nurtured and raised me with boundless love, endless sacrifices, and profound grace.</span>
+            </div>
+
+            <!-- Line 2 -->
+            <div class="verse-couplet">
+              <span class="verse-te lang-te">నా జీవితంలో మీరు నా తల్లిగా ఉండటం నాకు భగవంతుడు ఇచ్చిన అతిపెద్ద వరం.</span>
+              <span class="verse-en lang-en">Having you as my mother is the greatest blessing God has bestowed upon my life.</span>
+            </div>
+
+            <!-- Line 3 -->
+            <div class="verse-couplet">
+              <span class="verse-te lang-te">మీ అమూల్యమైన ప్రేమ, ఆశీస్సులే నన్ను ఎల్లప్పుడూ ముందుకు నడిపిస్తున్నాయి.</span>
+              <span class="verse-en lang-en">Your priceless love and sacred prayers are the guiding light that always leads me forward.</span>
+            </div>
+
+            <!-- Line 4 (Highlight) -->
+            <div class="verse-couplet verse-highlight">
+              <span class="verse-te lang-te telugu-highlight">మిమ్మల్ని నా తల్లిగా పొందడం నా అదృష్టం.. జన్మదిన శుభాకాంక్షలు అమ్మా!</span>
+              <span class="verse-en lang-en en-highlight">To be blessed with you as my mother is my highest fortune.. Wishing you a very Happy Birthday, Amma!</span>
+            </div>
             
             <!-- Floral Garland before Daughter's Name -->
             <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
-            <div class="en-closing">
-              <div class="en-valediction">With eternal love and gratitude,</div>
-              <div class="en-signoff">— Your daughter, Shahin Parvez 💖</div>
+
+            <!-- Unified Sign-off -->
+            <div class="dedication-closing">
+              <div class="valediction-unified">
+                <span class="lang-te">ఎల్లప్పుడూ మీ ప్రేమతో</span><span class="lang-sep"> • </span><span class="lang-en">Forever wrapped in your love,</span>
+              </div>
+              <div class="signoff-unified">
+                <span class="lang-te">— మీ కూతురు, షాహిన్ పర్వేజ్</span><span class="lang-sep"> / </span><span class="lang-en">Your daughter, Shahin Parvez</span> 💖
+              </div>
             </div>
           </div>
         </div>
@@ -1632,43 +1759,73 @@
 
   <!-- Stage 3: Ultra-Chic Birthday Card Modal -->
   <div class="luxury-card-backdrop" id="wishes-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="luxury-card-body" style="max-height: 85vh; overflow-y: auto;">
+    <div class="luxury-card-body" data-active-lang="both" style="max-height: 85vh; overflow-y: auto;">
       <button class="card-close-x" id="btn-close-modal" aria-label="Close Wishes Card">✕</button>
       
       <div class="mother-card-gold-seal" style="margin-bottom: 4px;">🌹</div>
-      <div class="card-salutation-badge" id="modal-title" style="font-family: 'Noto Serif Telugu', var(--font-display), serif; font-size: 1.35rem;">అమ్మా 🌹</div>
-      <div class="card-name-line" style="font-size: 0.95rem; color: #ffd700; letter-spacing: 1px;">A Daughter's Heartfelt Tribute</div>
+      <div class="card-salutation-badge" id="modal-title" style="font-family: 'Noto Serif Telugu', var(--font-display), serif; font-size: 1.35rem;">
+        <span class="heading-te lang-te">అమ్మా 🌹</span>
+        <span class="heading-en-sub lang-en" style="margin-top: 0;">Dearest Amma 🌹</span>
+      </div>
+      <div class="card-name-line" style="font-size: 0.95rem; color: #ffd700; letter-spacing: 1px;">A Daughter's Loving Birthday Dedication</div>
       
-      <div class="card-gold-divider"></div>
-      
-      <!-- Telugu Tribute in Modal -->
-      <div class="telugu-tribute" style="font-size: 1rem;">
-        <p class="telugu-salutation">అమ్మా,</p>
-        <p class="telugu-line">నన్ను ఎంతో ప్రేమతో, ఎనలేని త్యాగాలతో ఎంతో గొప్పగా పెంచి పెద్దచేశారు.</p>
-        <p class="telugu-line">నా జీవితంలో మీరు నా తల్లిగా ఉండటం నాకు భగవంతుడు ఇచ్చిన అతిపెద్ద వరం.</p>
-        <p class="telugu-line">మీ అమూల్యమైన ప్రేమ, ఆశీస్సులే నన్ను ఎల్లప్పుడూ ముందుకు నడిపిస్తున్నాయి.</p>
-        <p class="telugu-line telugu-highlight">మిమ్మల్ని నా తల్లిగా పొందడం నా అదృష్టం.. జన్మదిన శుభాకాంక్షలు అమ్మా!</p>
-        
-        <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
-        <div class="telugu-closing">
-          <div class="telugu-valediction">ఎల్లప్పుడూ మీ ప్రేమతో,</div>
-          <div class="telugu-signoff">— మీ కూతురు, షాహిన్ పర్వేజ్ 💖</div>
-        </div>
+      <!-- Bilingual Filter Tabs in Modal -->
+      <div class="card-lang-tabs" role="tablist" aria-label="Language selection modal" style="margin-top: 10px;">
+        <button type="button" class="lang-tab-btn active" data-lang="both" role="tab" aria-selected="true">
+          <span>✨ Both / ఇరుభాషలు</span>
+        </button>
+        <button type="button" class="lang-tab-btn" data-lang="telugu" role="tab" aria-selected="false">
+          <span>🌹 తెలుగు</span>
+        </button>
+        <button type="button" class="lang-tab-btn" data-lang="english" role="tab" aria-selected="false">
+          <span>💌 English</span>
+        </button>
       </div>
 
-      <!-- English Translation in Modal -->
-      <div class="english-section">
-        <div class="lang-badge">English Translation</div>
-        <p class="en-salutation">Dearest Mother Shareefunnisa,</p>
-        <p class="en-line">You raised me with boundless love, endless sacrifices, and profound greatness.</p>
-        <p class="en-line">Having you as my mother is the greatest blessing in my entire life.</p>
-        <p class="en-line">Your selfless love, care, and guiding prayers have shaped who I am today.</p>
-        <p class="en-line en-highlight">I am forever proud and blessed to be your daughter. Happy Birthday, Ammi!</p>
+      <div class="card-gold-divider"></div>
+      
+      <!-- Telugu & English Birthday Dedication in Modal -->
+      <div class="telugu-dedication" style="font-size: 1rem;">
+        <!-- Salutation -->
+        <div class="salutation-block">
+          <span class="salutation-te lang-te">అమ్మా,</span>
+          <span class="salutation-en lang-en">Dearest Amma,</span>
+        </div>
+
+        <!-- Line 1 -->
+        <div class="verse-couplet">
+          <span class="verse-te lang-te">నన్ను ఎంతో ప్రేమతో, ఎనలేని త్యాగాలతో ఎంతో గొప్పగా పెంచి పెద్దచేశారు.</span>
+          <span class="verse-en lang-en">You nurtured and raised me with boundless love, endless sacrifices, and profound grace.</span>
+        </div>
+
+        <!-- Line 2 -->
+        <div class="verse-couplet">
+          <span class="verse-te lang-te">నా జీవితంలో మీరు నా తల్లిగా ఉండటం నాకు భగవంతుడు ఇచ్చిన అతిపెద్ద వరం.</span>
+          <span class="verse-en lang-en">Having you as my mother is the greatest blessing God has bestowed upon my life.</span>
+        </div>
+
+        <!-- Line 3 -->
+        <div class="verse-couplet">
+          <span class="verse-te lang-te">మీ అమూల్యమైన ప్రేమ, ఆశీస్సులే నన్ను ఎల్లప్పుడూ ముందుకు నడిపిస్తున్నాయి.</span>
+          <span class="verse-en lang-en">Your priceless love and sacred prayers are the guiding light that always leads me forward.</span>
+        </div>
+
+        <!-- Line 4 (Highlight) -->
+        <div class="verse-couplet verse-highlight">
+          <span class="verse-te lang-te telugu-highlight">మిమ్మల్ని నా తల్లిగా పొందడం నా అదృష్టం.. జన్మదిన శుభాకాంక్షలు అమ్మా!</span>
+          <span class="verse-en lang-en en-highlight">To be blessed with you as my mother is my highest fortune.. Wishing you a very Happy Birthday, Amma!</span>
+        </div>
         
         <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
-        <div class="en-closing">
-          <div class="en-valediction">With eternal love and gratitude,</div>
-          <div class="en-signoff">— Your daughter, Shahin Parvez 💖</div>
+
+        <!-- Unified Sign-off -->
+        <div class="dedication-closing">
+          <div class="valediction-unified">
+            <span class="lang-te">ఎల్లప్పుడూ మీ ప్రేమతో</span><span class="lang-sep"> • </span><span class="lang-en">Forever wrapped in your love,</span>
+          </div>
+          <div class="signoff-unified">
+            <span class="lang-te">— మీ కూతురు, షాహిన్ పర్వేజ్</span><span class="lang-sep"> / </span><span class="lang-en">Your daughter, Shahin Parvez</span> 💖
+          </div>
         </div>
       </div>
 
@@ -2647,7 +2804,7 @@
           playCakeRiseChime();
           triggerHaptic([40, 60, 40]);
         }
-        // 5. STEP 4 - FOURTH TOUCH (Stage 4 - Candles Blow, Grand Celebration & Mother's Tribute Card)
+        // 5. STEP 4 - FOURTH TOUCH (Stage 4 - Candles Blow, Grand Celebration & Mother's Birthday Blessing Card)
         else if (stage === 4) {
           document.body.classList.add('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-celebration';
@@ -2771,7 +2928,7 @@
       function isInteractiveTarget(target) {
         if (!target || !target.closest) return false;
         return !!target.closest(
-          '#btn-audio, #btn-replay, #audio-evolution-badge, #btn-close-modal, #btn-shower-again, #btn-view-cake, .luxury-card-body, #btn-open-card, .mother-blessing-card, .mother-card-inner, .telugu-tribute, .english-section, a, button'
+          '#btn-audio, #btn-replay, #audio-evolution-badge, #btn-close-modal, #btn-shower-again, #btn-view-cake, .luxury-card-body, #btn-open-card, .mother-blessing-card, .mother-card-inner, .telugu-dedication, .card-lang-tabs, .lang-tab-btn, a, button'
         );
       }
 
@@ -2937,9 +3094,38 @@
       });
 
       /* -----------------------------------------------------------
+         BILINGUAL LANGUAGE FILTER TOGGLE (BOTH / TELUGU / ENGLISH)
+      ------------------------------------------------------------ */
+      function setDedicationLanguage(lang) {
+        const containers = document.querySelectorAll('.mother-blessing-card, .luxury-card-body');
+        containers.forEach(c => {
+          c.setAttribute('data-active-lang', lang);
+        });
+
+        const allTabs = document.querySelectorAll('.lang-tab-btn');
+        allTabs.forEach(tab => {
+          const isActive = tab.getAttribute('data-lang') === lang;
+          tab.classList.toggle('active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+
+      document.querySelectorAll('.lang-tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const lang = btn.getAttribute('data-lang');
+          if (lang) {
+            setDedicationLanguage(lang);
+            triggerHaptic([25]);
+          }
+        });
+      });
+
+      /* -----------------------------------------------------------
          INITIALIZATION
       ------------------------------------------------------------ */
       createAmbientSparkles();
+      setDedicationLanguage('both');
       updateStageUI(0);
 
     })();
