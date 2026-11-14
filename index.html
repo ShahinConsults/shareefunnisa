@@ -45,7 +45,14 @@
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    html, body {
+    html {
+      width: 100%;
+      min-height: 100%;
+      background-color: var(--bg-dark);
+      overflow-x: hidden;
+    }
+
+    body {
       width: 100%;
       height: 100%;
       height: 100dvh;
@@ -59,12 +66,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body.allow-scroll {
+    html.allow-scroll, body.allow-scroll {
       height: auto !important;
       min-height: 100% !important;
       overflow-x: hidden !important;
       overflow-y: auto !important;
       -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
 
     /* Ambient Luxury Obsidian Background */
@@ -900,10 +908,12 @@
       position: relative;
       width: 100%;
       max-width: 440px;
+      max-height: calc(88vh - env(safe-area-inset-bottom, 0px));
+      max-height: calc(88dvh - env(safe-area-inset-bottom, 0px));
       background: linear-gradient(165deg, rgba(28, 18, 38, 0.95) 0%, rgba(14, 10, 20, 0.98) 100%);
       border: 1px solid var(--border-gold);
       border-radius: 28px;
-      padding: 36px 30px 30px 30px;
+      padding: 36px 24px max(60px, calc(40px + env(safe-area-inset-bottom, 20px))) 24px;
       box-shadow: 
         0 24px 60px rgba(0, 0, 0, 0.75),
         0 0 50px rgba(136, 19, 55, 0.35),
@@ -911,7 +921,9 @@
       text-align: center;
       transform: scale(0.9) translateY(24px);
       transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.2);
-      overflow: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     .luxury-card-backdrop.visible .luxury-card-body {
@@ -1115,7 +1127,12 @@
       height: auto !important;
       min-height: 100vh !important;
       min-height: 100dvh !important;
-      padding-bottom: max(34px, calc(20px + env(safe-area-inset-bottom, 24px))) !important;
+      padding-bottom: max(160px, calc(120px + env(safe-area-inset-bottom, 34px))) !important;
+    }
+
+    body.allow-scroll .bottom-navbar {
+      margin-top: 24px;
+      margin-bottom: max(30px, calc(16px + env(safe-area-inset-bottom, 20px)));
     }
 
     /* 4-Step Milestone Tracker */
@@ -1214,7 +1231,7 @@
     }
 
     /* =============================================================
-       HEARTFELT BIRTHDAY CARD FROM DAUGHTER SHAHIN PARVEZ (STEP 4 REVEAL)
+       HEARTFELT BIRTHDAY CARDS FROM DAUGHTER SHAHIN PARVEEN (STEP 4 REVEAL)
     ============================================================== */
     .mother-blessing-card {
       width: 100%;
@@ -1235,7 +1252,8 @@
     .mother-blessing-card.visible {
       opacity: 1;
       max-height: 3500px;
-      margin: 34px auto 26px auto;
+      margin: 34px auto 40px auto;
+      padding-bottom: max(140px, calc(100px + env(safe-area-inset-bottom, 24px)));
       transform: translateY(0) scale(1);
       pointer-events: auto;
     }
@@ -1244,7 +1262,7 @@
       background: linear-gradient(165deg, rgba(34, 20, 44, 0.96) 0%, rgba(16, 10, 24, 0.98) 100%);
       border: 1.8px solid rgba(255, 215, 0, 0.65);
       border-radius: 26px;
-      padding: 30px 24px 26px 24px;
+      padding: 30px 24px 34px 24px;
       box-shadow: 
         0 20px 55px rgba(0, 0, 0, 0.85),
         0 0 45px rgba(255, 215, 0, 0.25),
@@ -1260,6 +1278,7 @@
         0 20px 55px rgba(0, 0, 0, 0.85),
         0 0 45px rgba(255, 182, 193, 0.22),
         inset 0 0 25px rgba(255, 215, 0, 0.08);
+      padding: 30px 24px 38px 24px;
     }
 
     .mother-card-gold-seal {
@@ -1367,9 +1386,10 @@
     }
 
     .telugu-closing {
-      margin-top: 10px;
+      margin-top: 14px;
       text-align: right;
       padding-right: 6px;
+      padding-bottom: 6px;
     }
 
     .telugu-valediction {
@@ -1382,8 +1402,9 @@
       font-size: 1.15rem;
       font-weight: 700;
       color: #ffffff;
-      margin-top: 4px;
-      text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+      margin-top: 6px;
+      line-height: 1.5;
+      text-shadow: 0 0 14px rgba(255, 215, 0, 0.7);
     }
 
     /* English Tribute Presentation */
@@ -1420,9 +1441,10 @@
     }
 
     .en-closing {
-      margin-top: 12px;
+      margin-top: 14px;
       text-align: right;
       padding-right: 6px;
+      padding-bottom: 6px;
     }
 
     .en-valediction {
@@ -1435,8 +1457,9 @@
       font-size: 1.15rem;
       font-weight: 700;
       color: #ffffff;
-      margin-top: 4px;
-      text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+      margin-top: 6px;
+      line-height: 1.5;
+      text-shadow: 0 0 14px rgba(255, 215, 0, 0.7);
     }
 
     /* Interlude banner inside modal between cards */
@@ -1603,13 +1626,13 @@
         <div class="stage-shadow"></div>
       </div>
 
-      <!-- Heartfelt Keepsake Birthday Cards from Daughter Shahin Parvez (Telugu Card & English Card) -->
+      <!-- Heartfelt Keepsake Birthday Cards from Daughter Shahin Parveen (Telugu Card & English Card) -->
       <div class="mother-blessing-card" id="mother-card" aria-live="polite">
-        <!-- Card 1: Pure Sacred Telugu Tribute Card for Amma -->
+        <!-- Card 1: Pure Sacred Telugu Tribute Card for Amma (100% Telugu, No English Translations) -->
         <div class="mother-card-inner card-telugu-edition">
           <div class="mother-card-gold-seal">🌹</div>
           <h2 class="mother-card-heading">అమ్మా, మీ కూతురి హృదయపూర్వక సందేశం</h2>
-          <div class="mother-card-subheading">A Heartfelt Tribute from Your Daughter, Shahin Parvez</div>
+          <div class="mother-card-subheading" style="font-family: 'Noto Serif Telugu', serif; text-transform: none; font-size: 0.88rem; letter-spacing: 0.5px;">కూతురి అపారమైన ప్రేమతో...</div>
           <div class="mother-card-divider"></div>
           
           <div class="telugu-tribute">
@@ -1621,8 +1644,7 @@
             
             <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
             <div class="telugu-closing">
-              <div class="telugu-valediction">ఎల్లప్పుడూ మీ ప్రేమతో,</div>
-              <div class="telugu-signoff">— మీ కూతురు, షాహిన్ పర్వేజ్ 💖</div>
+              <div class="telugu-signoff">ప్రేమతో, మీ కూతురు షాహిన్ పర్వీన్ 💖</div>
             </div>
           </div>
         </div>
@@ -1643,8 +1665,7 @@
             
             <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
             <div class="en-closing">
-              <div class="en-valediction">Forever in your love,</div>
-              <div class="en-signoff">— Your loving daughter, Shahin Parvez 💖</div>
+              <div class="en-signoff">With love, your daughter Shahin Parveen 💖</div>
             </div>
           </div>
         </div>
@@ -1672,13 +1693,13 @@
 
   <!-- Stage 3: Ultra-Chic Birthday Card Modal -->
   <div class="luxury-card-backdrop" id="wishes-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="luxury-card-body" style="max-height: 85vh; overflow-y: auto;">
+    <div class="luxury-card-body">
       <button class="card-close-x" id="btn-close-modal" aria-label="Close Wishes Card">✕</button>
       
-      <!-- Section 1: Pure Telugu Tribute Card -->
+      <!-- Section 1: Pure Telugu Tribute Card (100% Telugu) -->
       <div class="mother-card-gold-seal" style="margin-bottom: 4px;">🌹</div>
       <div class="card-salutation-badge" id="modal-title" style="font-family: 'Noto Serif Telugu', var(--font-display), serif; font-size: 1.35rem;">అమ్మా 🌹</div>
-      <div class="card-name-line" style="font-size: 0.95rem; color: #ffd700; letter-spacing: 1px;">A Daughter's Heartfelt Tribute</div>
+      <div class="card-name-line" style="font-family: 'Noto Serif Telugu', serif; font-size: 0.95rem; color: #ffd700; letter-spacing: 0.5px;">కూతురి అపారమైన ప్రేమతో...</div>
       
       <div class="card-gold-divider"></div>
       
@@ -1691,15 +1712,14 @@
         
         <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
         <div class="telugu-closing">
-          <div class="telugu-valediction">ఎల్లప్పుడూ మీ ప్రేమతో,</div>
-          <div class="telugu-signoff">— మీ కూతురు, షాహిన్ పర్వేజ్ 💖</div>
+          <div class="telugu-signoff">ప్రేమతో, మీ కూతురు షాహిన్ పర్వీన్ 💖</div>
         </div>
       </div>
 
       <!-- Section 2: Distinct English Tribute Card for Amma -->
       <div class="modal-card-interlude">
         <span>💌</span>
-        <span>A Daughter’s Heartfelt Tribute (English)</span>
+        <span>A Daughter’s Heartfelt Tribute</span>
         <span>💌</span>
       </div>
 
@@ -1712,12 +1732,11 @@
         
         <div class="floral-divider">🌸 🌺 🌷 🌹 💐</div>
         <div class="en-closing">
-          <div class="en-valediction">Forever in your love,</div>
-          <div class="en-signoff">— Your loving daughter, Shahin Parvez 💖</div>
+          <div class="en-signoff">With love, your daughter Shahin Parveen 💖</div>
         </div>
       </div>
 
-      <div class="card-btn-row" style="margin-top: 24px;">
+      <div class="card-btn-row" style="margin-top: 24px; padding-bottom: 24px;">
         <button class="card-primary-cta" id="btn-shower-again">
           <span>🌸</span>
           <span>Shower Petals</span>
@@ -2619,7 +2638,8 @@
 
         // 1. INITIAL STATE (Stage 0 - The Closed Gift)
         if (stage === 0) {
-          document.body.classList.remove('allow-scroll');
+          document.documentElement.classList.remove('allow-scroll');
+        document.body.classList.remove('allow-scroll');
           window.scrollTo(0, 0);
           stageWrapper.className = 'stage-interactive-wrapper gentle-levitate';
           boxRadiance.classList.remove('active');
@@ -2639,7 +2659,8 @@
         }
         // 2. STEP 1 - FIRST TOUCH (Stage 1 - Box Opens)
         else if (stage === 1) {
-          document.body.classList.remove('allow-scroll');
+          document.documentElement.classList.remove('allow-scroll');
+        document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2657,7 +2678,8 @@
         }
         // 3. STEP 2 - SECOND TOUCH ("Happy Birthday Shareefunnisa" Photo rises FROM the box!)
         else if (stage === 2) {
-          document.body.classList.remove('allow-scroll');
+          document.documentElement.classList.remove('allow-scroll');
+        document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-surprise';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2675,7 +2697,8 @@
         }
         // 4. STEP 3 - THIRD TOUCH (Stage 3 - Birthday Cake Rises)
         else if (stage === 3) {
-          document.body.classList.remove('allow-scroll');
+          document.documentElement.classList.remove('allow-scroll');
+        document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-cake';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2694,6 +2717,7 @@
         }
         // 5. STEP 4 - FOURTH TOUCH (Stage 4 - Candles Blow, Grand Celebration & Mother's Birthday Blessing Card)
         else if (stage === 4) {
+          document.documentElement.classList.add('allow-scroll');
           document.body.classList.add('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-celebration';
           boxRadiance.classList.add('active');
@@ -2717,7 +2741,7 @@
           startPetalEngine(true);
           triggerHaptic([60, 100, 60, 100, 80]);
 
-          // Reveal Heartfelt Keepsake Card from Shahin Parvez on this last click!
+          // Reveal Heartfelt Keepsake Card from Shahin Parveen on this last click!
           if (motherCard) {
             motherCard.classList.add('visible');
             setTimeout(() => {
@@ -2758,6 +2782,7 @@
       /* Reset to Stage 0 */
       function resetExperience() {
         triggerHaptic([30, 30]);
+        document.documentElement.classList.remove('allow-scroll');
         document.body.classList.remove('allow-scroll');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         updateStageUI(0);
