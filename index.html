@@ -45,14 +45,7 @@
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    html {
-      width: 100%;
-      min-height: 100%;
-      background-color: var(--bg-dark);
-      overflow-x: hidden;
-    }
-
-    body {
+    html, body {
       width: 100%;
       height: 100%;
       height: 100dvh;
@@ -884,12 +877,12 @@
        STAGE 3: ULTRA-CHIC BIRTHDAY CARD MODAL
     ============================================================== */
     .luxury-card-backdrop {
+      display: none;
       position: fixed;
       inset: 0;
       background: rgba(9, 9, 14, 0.82);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
@@ -900,6 +893,7 @@
     }
 
     .luxury-card-backdrop.visible {
+      display: flex !important;
       opacity: 1;
       pointer-events: auto;
     }
@@ -1234,24 +1228,22 @@
        HEARTFELT BIRTHDAY CARDS FROM DAUGHTER SHAHIN PARVEEN (STEP 4 REVEAL)
     ============================================================== */
     .mother-blessing-card {
+      display: none;
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
       opacity: 0;
-      max-height: 0;
-      overflow: hidden;
       transform: translateY(28px) scale(0.96);
       transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
                   transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
-                  max-height 0.85s cubic-bezier(0.16, 1, 0.3, 1),
                   margin 0.85s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: none;
       z-index: 30;
     }
 
     .mother-blessing-card.visible {
+      display: block !important;
       opacity: 1;
-      max-height: 3500px;
       margin: 34px auto 40px auto;
       padding-bottom: max(140px, calc(100px + env(safe-area-inset-bottom, 24px)));
       transform: translateY(0) scale(1);
@@ -1627,7 +1619,7 @@
       </div>
 
       <!-- Heartfelt Keepsake Birthday Cards from Daughter Shahin Parveen (Telugu Card & English Card) -->
-      <div class="mother-blessing-card" id="mother-card" aria-live="polite">
+      <div class="mother-blessing-card" id="mother-card" style="display: none;" aria-live="polite">
         <!-- Card 1: Pure Sacred Telugu Tribute Card for Amma (100% Telugu, No English Translations) -->
         <div class="mother-card-inner card-telugu-edition">
           <div class="mother-card-gold-seal">🌹</div>
@@ -1692,7 +1684,7 @@
   </div>
 
   <!-- Stage 3: Ultra-Chic Birthday Card Modal -->
-  <div class="luxury-card-backdrop" id="wishes-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="luxury-card-backdrop" id="wishes-modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="luxury-card-body">
       <button class="card-close-x" id="btn-close-modal" aria-label="Close Wishes Card">✕</button>
       
@@ -2639,7 +2631,7 @@
         // 1. INITIAL STATE (Stage 0 - The Closed Gift)
         if (stage === 0) {
           document.documentElement.classList.remove('allow-scroll');
-        document.body.classList.remove('allow-scroll');
+          document.body.classList.remove('allow-scroll');
           window.scrollTo(0, 0);
           stageWrapper.className = 'stage-interactive-wrapper gentle-levitate';
           boxRadiance.classList.remove('active');
@@ -2652,15 +2644,21 @@
           promptText.textContent = 'Tap anywhere to open the gift 🎁';
           promptChevron.style.display = 'inline-block';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
-          if (motherCard) motherCard.classList.remove('visible');
-          wishesModal.classList.remove('visible');
+          if (motherCard) {
+            motherCard.style.display = 'none';
+            motherCard.classList.remove('visible');
+          }
+          if (wishesModal) {
+            wishesModal.style.display = 'none';
+            wishesModal.classList.remove('visible');
+          }
           resetCandles();
           stopPetalEngine();
         }
         // 2. STEP 1 - FIRST TOUCH (Stage 1 - Box Opens)
         else if (stage === 1) {
           document.documentElement.classList.remove('allow-scroll');
-        document.body.classList.remove('allow-scroll');
+          document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2672,14 +2670,17 @@
           promptText.textContent = 'Tap to see what emerges from the box 🎁';
           promptChevron.style.display = 'none';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
-          if (motherCard) motherCard.classList.remove('visible');
+          if (motherCard) {
+            motherCard.style.display = 'none';
+            motherCard.classList.remove('visible');
+          }
           playBoxOpeningChime();
           triggerHaptic([50, 70, 50]);
         }
         // 3. STEP 2 - SECOND TOUCH ("Happy Birthday Shareefunnisa" Photo rises FROM the box!)
         else if (stage === 2) {
           document.documentElement.classList.remove('allow-scroll');
-        document.body.classList.remove('allow-scroll');
+          document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-surprise';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2691,14 +2692,17 @@
           promptText.textContent = 'Tap again to reveal the birthday cake 🎂';
           promptChevron.style.display = 'none';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
-          if (motherCard) motherCard.classList.remove('visible');
+          if (motherCard) {
+            motherCard.style.display = 'none';
+            motherCard.classList.remove('visible');
+          }
           playCakeRiseChime();
           triggerHaptic([40, 60, 40]);
         }
         // 4. STEP 3 - THIRD TOUCH (Stage 3 - Birthday Cake Rises)
         else if (stage === 3) {
           document.documentElement.classList.remove('allow-scroll');
-        document.body.classList.remove('allow-scroll');
+          document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-cake';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
@@ -2710,7 +2714,10 @@
           promptText.textContent = 'Tap candles to blow them out & celebrate 🌸';
           promptChevron.style.display = 'none';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
-          if (motherCard) motherCard.classList.remove('visible');
+          if (motherCard) {
+            motherCard.style.display = 'none';
+            motherCard.classList.remove('visible');
+          }
           resetCandles();
           playCakeRiseChime();
           triggerHaptic([40, 60, 40]);
@@ -2741,12 +2748,14 @@
           startPetalEngine(true);
           triggerHaptic([60, 100, 60, 100, 80]);
 
-          // Reveal Heartfelt Keepsake Card from Shahin Parveen on this last click!
+          // Reveal Heartfelt Keepsake Card from Shahin Parveen specifically on this last click!
           if (motherCard) {
+            motherCard.style.display = 'block';
+            void motherCard.offsetWidth;
             motherCard.classList.add('visible');
             setTimeout(() => {
-              motherCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 400);
+              motherCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 350);
           }
         }
       }
@@ -2974,35 +2983,46 @@
         });
       }
 
-      // Optional Wishes Card Toggle in Stage 3
+      // Optional Wishes Card Toggle in Stage 4
       if (btnOpenCard) {
         btnOpenCard.addEventListener('click', (e) => {
           e.stopPropagation();
+          wishesModal.style.display = 'flex';
+          void wishesModal.offsetWidth;
           wishesModal.classList.add('visible');
         });
+      }
+
+      function hideWishesModal() {
+        wishesModal.classList.remove('visible');
+        setTimeout(() => {
+          if (!wishesModal.classList.contains('visible')) {
+            wishesModal.style.display = 'none';
+          }
+        }, 400);
       }
 
       // Modal buttons
       btnCloseModal.addEventListener('click', (e) => {
         e.stopPropagation();
-        wishesModal.classList.remove('visible');
+        hideWishesModal();
       });
 
       btnViewCake.addEventListener('click', (e) => {
         e.stopPropagation();
-        wishesModal.classList.remove('visible');
+        hideWishesModal();
       });
 
       btnShowerAgain.addEventListener('click', (e) => {
         e.stopPropagation();
-        wishesModal.classList.remove('visible');
+        hideWishesModal();
         startPetalEngine(true);
         triggerHaptic([50, 50, 50]);
       });
 
       wishesModal.addEventListener('click', (e) => {
         if (e.target === wishesModal) {
-          wishesModal.classList.remove('visible');
+          hideWishesModal();
         }
       });
 
