@@ -1349,7 +1349,8 @@
       border-color: rgba(255, 215, 0, 0.65);
     }
 
-    /* Dedication Verses & Presentation */
+    /* Telugu Tribute / Dedication Verses & Presentation */
+    .telugu-tribute,
     .telugu-dedication {
       font-family: 'Noto Serif Telugu', serif;
       font-size: 1.05rem;
@@ -1672,12 +1673,12 @@
             <span class="heading-te lang-te">అమ్మా, మీ కూతురి హృదయపూర్వక సందేశం</span>
             <span class="heading-en-sub lang-en">Mother, A Heartfelt Message from Your Daughter</span>
           </h2>
-          <div class="mother-card-subheading">A Loving Birthday Dedication from Your Daughter, Shahin Parvez</div>
+          <div class="mother-card-subheading">A Heartfelt Tribute from Your Daughter, Shahin Parvez</div>
           
           <!-- Bilingual Language Filter Tabs -->
           <div class="card-lang-tabs" role="tablist" aria-label="Language selection">
             <button type="button" class="lang-tab-btn active" data-lang="both" role="tab" aria-selected="true">
-              <span>✨ Both / ఇరుభాషలు</span>
+              <span>✨ Both (Telugu + English)</span>
             </button>
             <button type="button" class="lang-tab-btn" data-lang="telugu" role="tab" aria-selected="false">
               <span>🌹 తెలుగు</span>
@@ -1689,8 +1690,8 @@
 
           <div class="mother-card-divider"></div>
           
-          <!-- Telugu & English Birthday Dedication -->
-          <div class="telugu-dedication">
+          <!-- Telugu & English Birthday Tribute Card -->
+          <div class="telugu-tribute telugu-dedication">
             <!-- Salutation -->
             <div class="salutation-block">
               <span class="salutation-te lang-te">అమ్మా,</span>
@@ -1767,12 +1768,12 @@
         <span class="heading-te lang-te">అమ్మా 🌹</span>
         <span class="heading-en-sub lang-en" style="margin-top: 0;">Dearest Amma 🌹</span>
       </div>
-      <div class="card-name-line" style="font-size: 0.95rem; color: #ffd700; letter-spacing: 1px;">A Daughter's Loving Birthday Dedication</div>
+      <div class="card-name-line" style="font-size: 0.95rem; color: #ffd700; letter-spacing: 1px;">A Daughter's Heartfelt Tribute</div>
       
       <!-- Bilingual Filter Tabs in Modal -->
       <div class="card-lang-tabs" role="tablist" aria-label="Language selection modal" style="margin-top: 10px;">
         <button type="button" class="lang-tab-btn active" data-lang="both" role="tab" aria-selected="true">
-          <span>✨ Both / ఇరుభాషలు</span>
+          <span>✨ Both (Telugu + English)</span>
         </button>
         <button type="button" class="lang-tab-btn" data-lang="telugu" role="tab" aria-selected="false">
           <span>🌹 తెలుగు</span>
@@ -1784,8 +1785,8 @@
 
       <div class="card-gold-divider"></div>
       
-      <!-- Telugu & English Birthday Dedication in Modal -->
-      <div class="telugu-dedication" style="font-size: 1rem;">
+      <!-- Telugu & English Birthday Tribute in Modal -->
+      <div class="telugu-tribute telugu-dedication" style="font-size: 1rem;">
         <!-- Salutation -->
         <div class="salutation-block">
           <span class="salutation-te lang-te">అమ్మా,</span>
@@ -2928,7 +2929,7 @@
       function isInteractiveTarget(target) {
         if (!target || !target.closest) return false;
         return !!target.closest(
-          '#btn-audio, #btn-replay, #audio-evolution-badge, #btn-close-modal, #btn-shower-again, #btn-view-cake, .luxury-card-body, #btn-open-card, .mother-blessing-card, .mother-card-inner, .telugu-dedication, .card-lang-tabs, .lang-tab-btn, a, button'
+          '#btn-audio, #btn-replay, #audio-evolution-badge, #btn-close-modal, #btn-shower-again, #btn-view-cake, .luxury-card-body, #btn-open-card, .mother-blessing-card, .mother-card-inner, .telugu-tribute, .telugu-dedication, .card-lang-tabs, .lang-tab-btn, a, button'
         );
       }
 
