@@ -1498,12 +1498,11 @@
         <span>Replay</span>
       </button>
 
-      <!-- Stage Tracker Dots (4 Steps) -->
+      <!-- Stage Tracker Dots (3 Steps) -->
       <div class="stage-tracker-pill" aria-label="Surprise Steps">
-        <span class="tracker-dot ready" id="dot-1" title="Step 1: Open Box"></span>
-        <span class="tracker-dot" id="dot-2" title="Step 2: Happy Birthday Shareefunnisa from Box"></span>
-        <span class="tracker-dot" id="dot-3" title="Step 3: Reveal Cake"></span>
-        <span class="tracker-dot" id="dot-4" title="Step 4: Flowers & Mother's Blessing Card"></span>
+        <span class="tracker-dot ready" id="dot-1" title="Step 1: Open Gift & Mother's Photo"></span>
+        <span class="tracker-dot" id="dot-2" title="Step 2: Birthday Cake"></span>
+        <span class="tracker-dot" id="dot-3" title="Step 3: Make a Wish & Keepsake Card"></span>
       </div>
 
       <!-- High-Definition Sound Evolution Audio Toggle -->
@@ -1789,8 +1788,7 @@
       const trackerDots = [
         document.getElementById('dot-1'),
         document.getElementById('dot-2'),
-        document.getElementById('dot-3'),
-        document.getElementById('dot-4')
+        document.getElementById('dot-3')
       ];
 
       /* -----------------------------------------------------------
@@ -2599,10 +2597,10 @@
       function updateStageUI(stage) {
         state.currentStage = stage;
 
-        // Exactly 4 Tracker Dots
+        // Exactly 3 Tracker Dots (Step 1: Open Gift & Photo, Step 2: Birthday Cake, Step 3: Make a Wish & Keepsake Card)
         trackerDots.forEach((dot, index) => {
           if (!dot) return;
-          const stepNum = index + 1; // 1, 2, 3, 4
+          const stepNum = index + 1; // 1, 2, 3
           dot.className = 'tracker-dot';
 
           if (stage === 0) {
@@ -2615,10 +2613,6 @@
             if (stepNum === 2) dot.classList.add('active');
             if (stepNum === 3) dot.classList.add('ready');
           } else if (stage === 3) {
-            if (stepNum <= 3) dot.classList.add('completed');
-            if (stepNum === 3) dot.classList.add('active');
-            if (stepNum === 4) dot.classList.add('ready');
-          } else if (stage === 4) {
             dot.classList.add('completed', 'active');
           }
         });
@@ -2655,19 +2649,19 @@
           resetCandles();
           stopPetalEngine();
         }
-        // 2. STEP 1 - FIRST TOUCH (Stage 1 - Box Opens)
+        // 2. STEP 1 - FIRST TOUCH (Stage 1 - Box Opens & Mother's Photo Emerges! Box is NOT empty!)
         else if (stage === 1) {
           document.documentElement.classList.remove('allow-scroll');
           document.body.classList.remove('allow-scroll');
-          stageWrapper.className = 'stage-interactive-wrapper stage-open';
+          stageWrapper.className = 'stage-interactive-wrapper stage-open stage-surprise';
           boxRadiance.classList.add('active');
           mainGreeting.classList.remove('gold-foil-shimmer');
-          mainGreeting.textContent = 'A Special Surprise is Waiting Inside... ✨';
+          mainGreeting.textContent = 'A Special Surprise For You, Amma! 🌹';
           if (greetingSubtitle) {
-            greetingSubtitle.innerHTML = '<span>Step 1 of 4 • Box Opened</span> <span>✨</span>';
+            greetingSubtitle.innerHTML = '<span>Happy Birthday Shareefunnisa!</span> <span>💖</span>';
           }
-          promptIcon.textContent = '✨';
-          promptText.textContent = 'Tap to see who is waiting inside 💖';
+          promptIcon.textContent = '🎂';
+          promptText.textContent = 'Something sweet is waiting for you... Tap for the cake 🎂';
           promptChevron.style.display = 'none';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
           if (motherCard) {
@@ -2677,30 +2671,8 @@
           playBoxOpeningChime();
           triggerHaptic([50, 70, 50]);
         }
-        // 3. STEP 2 - SECOND TOUCH ("Happy Birthday Shareefunnisa" Photo rises FROM the box!)
+        // 3. STEP 2 - SECOND TOUCH (Stage 2 - The Birthday Cake Rises with Glowing Candles!)
         else if (stage === 2) {
-          document.documentElement.classList.remove('allow-scroll');
-          document.body.classList.remove('allow-scroll');
-          stageWrapper.className = 'stage-interactive-wrapper stage-open stage-surprise';
-          boxRadiance.classList.add('active');
-          mainGreeting.classList.remove('gold-foil-shimmer');
-          mainGreeting.textContent = 'Happy Birthday Shareefunnisa! 🌹';
-          if (greetingSubtitle) {
-            greetingSubtitle.innerHTML = '<span>Step 2 of 4 • Special Surprise</span> <span>💖</span>';
-          }
-          promptIcon.textContent = '🎂';
-          promptText.textContent = 'Something sweet is waiting for you... Tap to see the cake 🎂';
-          promptChevron.style.display = 'none';
-          if (btnOpenCard) btnOpenCard.style.display = 'none';
-          if (motherCard) {
-            motherCard.style.display = 'none';
-            motherCard.classList.remove('visible');
-          }
-          playCakeRiseChime();
-          triggerHaptic([40, 60, 40]);
-        }
-        // 4. STEP 3 - THIRD TOUCH (Stage 3 - Birthday Cake Rises)
-        else if (stage === 3) {
           document.documentElement.classList.remove('allow-scroll');
           document.body.classList.remove('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-cake';
@@ -2708,10 +2680,10 @@
           mainGreeting.classList.remove('gold-foil-shimmer');
           mainGreeting.textContent = 'Make a Birthday Wish, Shareefunnisa... 🕯️';
           if (greetingSubtitle) {
-            greetingSubtitle.innerHTML = '<span>Step 3 of 4 • Birthday Cake</span> <span>🎂</span>';
+            greetingSubtitle.innerHTML = '<span>Blow out the candles & celebrate</span> <span>✨</span>';
           }
           promptIcon.textContent = '🌸';
-          promptText.textContent = 'Tap candles to blow them out & celebrate 🌸';
+          promptText.textContent = 'Tap the candles to blow them out & make a wish 🌸';
           promptChevron.style.display = 'none';
           if (btnOpenCard) btnOpenCard.style.display = 'none';
           if (motherCard) {
@@ -2722,8 +2694,8 @@
           playCakeRiseChime();
           triggerHaptic([40, 60, 40]);
         }
-        // 5. STEP 4 - FOURTH TOUCH (Stage 4 - Candles Blow, Grand Celebration & Mother's Birthday Blessing Card)
-        else if (stage === 4) {
+        // 4. STEP 3 - THIRD TOUCH (Stage 3 - Candles Blow Out, Celebration & Keepsake Tribute Card Reveal!)
+        else if (stage === 3) {
           document.documentElement.classList.add('allow-scroll');
           document.body.classList.add('allow-scroll');
           stageWrapper.className = 'stage-interactive-wrapper stage-open stage-celebration';
@@ -2748,7 +2720,7 @@
           startPetalEngine(true);
           triggerHaptic([60, 100, 60, 100, 80]);
 
-          // Reveal Heartfelt Keepsake Card from Shahin Parveen specifically on this last click!
+          // Reveal Heartfelt Keepsake Card from Shahin Parveen on this last click!
           if (motherCard) {
             motherCard.style.display = 'block';
             void motherCard.offsetWidth;
@@ -2780,9 +2752,7 @@
         } else if (state.currentStage === 2) {
           updateStageUI(3);
         } else if (state.currentStage === 3) {
-          updateStageUI(4);
-        } else if (state.currentStage === 4) {
-          // Extra flower shower burst on every touch in Stage 4!
+          // Extra flower shower burst on every touch in Stage 3!
           startPetalEngine(true);
           triggerHaptic([40, 60]);
         }
@@ -2892,10 +2862,10 @@
           return;
         }
 
-        // Direct candle clicks in Stage 3 blow out candles & advance to Stage 4
-        if (!touchMoved && e.target.closest('.candle-unit') && state.currentStage === 3) {
+        // Direct candle clicks in Stage 2 blow out candles & advance to Stage 3 (Make a Wish & Keepsake Card)
+        if (!touchMoved && e.target.closest('.candle-unit') && state.currentStage === 2) {
           lastInteractionTime = now;
-          updateStageUI(4);
+          updateStageUI(3);
           return;
         }
 
