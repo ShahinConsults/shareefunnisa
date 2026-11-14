@@ -29,11 +29,11 @@ An ultra-modern, luxury interactive birthday celebration web application customi
 4. **Step 3 — Make a Wish & Keepsake Tribute Reveal (Third Touch)**:
    - The glowing candles blow out with soft smoke puffs.
    - A magnificent 60fps canvas flower shower of velvety rose petals, sakura blossoms, and gold flakes cascades across the entire screen.
-   - The page smoothly unblocks scrolling and reveals two heartfelt keepsake tribute cards from daughter **Shahin Parveen**:
+   - The page smoothly unblocks scrolling and reveals two heartfelt keepsake tribute cards from daughter **Shahin Parvez**:
      - **Sacred Telugu Tribute Card** (100% pure Telugu in respectful plural honorifics):
-       > *"అమ్మా, నన్ను ఎంతో ప్రేమతో, ఎనలేని త్యాగాలతో ఎంతో గొప్పగా పెంచి పెద్దచేశారు. నా జీవితంలో మీరు నా తల్లిగా ఉండటం నాకు భగవంతుడు ఇచ్చిన అతిపెద్ద వరం. మీ అమూల్యమైన ప్రేమ, ఆశీస్సులే నన్ను ఎల్లప్పుడూ ముందుకు నడిపిస్తున్నాయి. మిమ్మల్ని నా తల్లిగా పొందడం నా అదృష్టం.. జన్మదిన శుభాకాంక్షలు అమ్మా! ప్రేమతో, మీ కూతురు షాహిన్ పర్వీన్ 💖"*
+       > *"అమ్మా, నన్ను ఎంతో ప్రేమతో, ఎనలేని త్యాగాలతో ఎంతో గొప్పగా పెంచి పెద్దచేశారు. నా జీవితంలో మీరు నా తల్లిగా ఉండటం నాకు భగవంతుడు ఇచ్చిన అతిపెద్ద వరం. మీ అమూల్యమైన ప్రేమ, ఆశీస్సులే నన్ను ఎల్లప్పుడూ ముందుకు నడిపిస్తున్నాయి. మిమ్మల్ని నా తల్లిగా పొందడం నా అదృష్టం.. జన్మదిన శుభాకాంక్షలు అమ్మా! ప్రేమతో, మీ కూతురు షాహిన్ పర్వేజ్ 💖"*
      - **English Tribute Card** (4 heartfelt poetic sentences honoring Amma):
-       > *"You nurtured and raised me with boundless love, endless sacrifices, and profound grace. Having you as my mother is the greatest blessing God has ever bestowed upon my life. Your priceless love and sacred prayers are the guiding light that always leads me forward. Being blessed with you as my mother is my highest fortune—wishing you a joyful Happy Birthday, Amma! With love, your daughter Shahin Parveen 💖"*
+       > *"You nurtured and raised me with boundless love, endless sacrifices, and profound grace. Having you as my mother is the greatest blessing God has ever bestowed upon my life. Your priceless love and sacred prayers are the guiding light that always leads me forward. Being blessed with you as my mother is my highest fortune—wishing you a joyful Happy Birthday, Amma! With love, your daughter Shahin Parvez 💖"*
    - Sound Evolution: Rich Concert Grand Piano.
 
 ---
