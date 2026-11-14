@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -12,6 +12,20 @@
   <meta name="referrer" content="no-referrer" />
   <meta name="description" content="A magical, ultra-modern luxury birthday celebration for Shareefunnisa." />
   <title>Happy Birthday Shareefunnisa! 🎂✨</title>
+
+  <!-- Luxury Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>" />
+
+  <!-- OpenGraph & Social Rich Previews -->
+  <meta property="og:title" content="Happy Birthday Shareefunnisa! 🎂✨" />
+  <meta property="og:description" content="A magical, ultra-modern luxury birthday celebration and heartfelt tribute for Shareefunnisa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shahinconsults.github.io/shareefunnisa/" />
+  <meta property="og:image" content="https://shahinconsults.github.io/shareefunnisa/shareefunnisa.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Happy Birthday Shareefunnisa! 🎂✨" />
+  <meta name="twitter:description" content="A magical, ultra-modern luxury birthday celebration and heartfelt tribute for Shareefunnisa." />
+  <meta name="twitter:image" content="https://shahinconsults.github.io/shareefunnisa/shareefunnisa.jpg" />
 
   <!-- Google Fonts: Luxury Serif & Sleek Modern UI -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -2756,6 +2770,7 @@
         document.documentElement.classList.remove('allow-scroll');
         document.body.classList.remove('allow-scroll');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        melodyNoteIndex = 0;
         updateStageUI(0);
       }
 
@@ -2973,6 +2988,7 @@
       btnViewCake.addEventListener('click', (e) => {
         e.stopPropagation();
         hideWishesModal();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
       btnShowerAgain.addEventListener('click', (e) => {
